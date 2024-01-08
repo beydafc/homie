@@ -26,8 +26,20 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Cloudinary
+gem "cloudinary"
+
+# Geocoder
+gem "geocoder"
+
+# PG Search
+gem "pg_search"
+
+# Mapbox
+gem "mapbox-gl-rails"
+
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
