@@ -1,0 +1,32 @@
+      <div>
+        <%= form_with url: stores_path, method: :get do %>
+        <span class="fa-solid fa-magnifying-glass lupa"></span>
+        <%= text_field_tag :query, nil, class: "form-control", placeholder:"Filtra tiendas"%>
+        <% end %>
+      </div>
+      <div>
+        <h3>Categories</h3>
+        <div class="d-flex">
+          <div class="col-4 mb-2">
+            <%= link_to stores_path, class: "text-decoration-none" do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('')">
+              <h3>Food & Drinks</h3>
+            </div>
+            <% end  %>
+          </div>
+          <div class="col-4 mb-2">
+            <%= link_to stores_path, class: "text-decoration-none" do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('')">
+              <h3>Beauty</h3>
+            </div>
+            <% end  %>
+          </div>
+          <div class="col-4 mb-2">
+            <%= link_to stores_path, class: "text-decoration-none" do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('')">
+              <h3>Entertainment</h3>
+            </div>
+            <% end  %>
+          </div>
+        </div>
+      </div>
