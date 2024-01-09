@@ -36,7 +36,7 @@ gem "geocoder"
 gem "pg_search"
 
 # Mapbox
-gem "mapbox-gl-rails"
+# gem "mapbox-gl-rails"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", ">= 4.0.1"
