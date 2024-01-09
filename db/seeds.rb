@@ -86,12 +86,12 @@ R_CATEGORY = %w(Restaurant Beauty Entertainment)
 R_NAME = %w(Silverio Luna CocoCafe Pulso Bocca)
 
 
-store1 = Store.new( category: R_CATEGORY.sample, address: "Sendero de la Esperanza 14 Milenio III Queretaro Mexico", name: R_NAME.sample, description: "Great restaurant!", state_id: monterrey.id)
-store2 = Store.new( category: R_CATEGORY.sample, address: "Sendero de la Esperanza 14 Milenio III Queretaro Mexico", name: R_NAME.sample, description: "Great restaurant!", state_id: guadalajara.id)
-store3 = Store.new( category: R_CATEGORY.sample, address: "Sendero de la Esperanza 14 Milenio III Queretaro Mexico", name: R_NAME.sample, description: "Great restaurant!", state_id: monterrey.id)
-store4 = Store.new( category: R_CATEGORY.sample, address: "Sendero de la Esperanza 14 Milenio III Queretaro Mexico", name: R_NAME.sample, description: "Great restaurant!", state_id: cdmx.id)
-store5 = Store.new( category: R_CATEGORY.sample, address: "Sendero de la Esperanza 14 Milenio III Queretaro Mexico", name: R_NAME.sample, description: "Great restaurant!", state_id: cdmx.id)
-store6 = Store.new( category: R_CATEGORY.sample, address: "Sendero de la Esperanza 14 Milenio III Queretaro Mexico", name: R_NAME.sample, description: "Great restaurant!", state_id: queretaro.id)
+store1 = Store.new( category: R_CATEGORY.sample, address: "Palms avenue, Miami", name: R_NAME.sample, description: "Great restaurant!", state_id: monterrey.id)
+store2 = Store.new( category: R_CATEGORY.sample, address: "Av Providencia 1700, Providencia, Chile", name: R_NAME.sample, description: "Great restaurant!", state_id: guadalajara.id)
+store3 = Store.new( category: R_CATEGORY.sample, address: "Sendero del Amanecer 16, Queretaro, Mexico", name: R_NAME.sample, description: "Great restaurant!", state_id: monterrey.id)
+store4 = Store.new( category: R_CATEGORY.sample, address: "3651 INTERNAL REVENUE SERVICE, AUSTIN, TX", name: R_NAME.sample, description: "Great restaurant!", state_id: cdmx.id)
+store5 = Store.new( category: R_CATEGORY.sample, address: "405 Lexington Avenue, New York", name: R_NAME.sample, description: "Great restaurant!", state_id: cdmx.id)
+store6 = Store.new( category: R_CATEGORY.sample, address: "8700 Beverly Blvd., Los Angeles, CA 90048", name: R_NAME.sample, description: "Great restaurant!", state_id: queretaro.id)
 
 
 store1.save!
