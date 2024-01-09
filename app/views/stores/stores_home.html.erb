@@ -1,32 +1,48 @@
-      <div>
-        <%= form_with url: stores_path, method: :get do %>
-        <span class="fa-solid fa-magnifying-glass lupa"></span>
-        <%= text_field_tag :query, nil, class: "form-control", placeholder:"Filtra tiendas"%>
-        <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1536010305525-f7aa0834e2c7?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+  <div class="container">
+    <div>
+      <%= form_with url: stores_path, method: :get do %>
+      <%= text_field_tag :query, nil, class: "form-control", placeholder:"Look for best stores for you!"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5">
+  <div class="container">
+    <h3 class="text-warning">Categories</h3>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 40px;">
+  <div class="col">
+    <%= link_to stores_path(query: "Restaurant"), class: "text-decoration-none" do %>
+      <div class="card h-80" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <img src="https://images.unsplash.com/photo-1527661591475-527312dd65f5?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top card-product-img" style="height: 20; width: 20;">
+          <div class="card-body">
+            <h5 class="card-title">Food & Drinks</h5>
+          </div>
       </div>
-      <div>
-        <h3>Categories</h3>
-        <div class="d-flex">
-          <div class="col-4 mb-2">
-            <%= link_to stores_path, class: "text-decoration-none" do %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('')">
-              <h3>Food & Drinks</h3>
-            </div>
-            <% end  %>
+    <% end %>
+  </div>
+  <div class="col">
+    <%= link_to stores_path(query: "Beauty"), class: "text-decoration-none" do %>
+      <div class="card h-80" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <img src="https://images.unsplash.com/photo-1610289982320-3891f7c9fd6d?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top card-product-img" style="height: 20; width: 20;">
+          <div class="card-body">
+            <h5 class="card-title">Beauty</h5>
           </div>
-          <div class="col-4 mb-2">
-            <%= link_to stores_path, class: "text-decoration-none" do %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('')">
-              <h3>Beauty</h3>
-            </div>
-            <% end  %>
-          </div>
-          <div class="col-4 mb-2">
-            <%= link_to stores_path, class: "text-decoration-none" do %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('')">
-              <h3>Entertainment</h3>
-            </div>
-            <% end  %>
-          </div>
-        </div>
       </div>
+    <% end %>
+  </div>
+  <div class="col">
+    <%= link_to stores_path(query: "Entertainment"), class: "text-decoration-none" do %>
+      <div class="card h-80" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top card-product-img" style="height: 20; width: 20;">
+          <div class="card-body">
+            <h5 class="card-title">Entertainment</h5>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>

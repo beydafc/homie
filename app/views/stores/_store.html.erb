@@ -1,0 +1,7 @@
+<div class="col-4 mb-2">
+  <%= link_to store_path(store), class: "text-decoration-none" do %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= url_for store.photo%>')">
+    <%= store.name %>
+  </div>
+  <% end  %>
+</div>
