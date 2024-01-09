@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[stores_home index]
+  skip_before_action :authenticate_user!, only: %i[stores_home index show]
 
   def stores_home
   end
@@ -10,6 +10,13 @@ class StoresController < ApplicationController
       @stores = Store.global_search(params[:query])
     else
       @stores = Store.all
+    end
+
+    @markers = @stores.geocoded.map do |store|
+      {
+        lat: store.latitude,
+        lng: store.longitude
+      }
     end
   end
 
