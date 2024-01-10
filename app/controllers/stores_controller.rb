@@ -23,5 +23,17 @@ class StoresController < ApplicationController
   def show
     @store = Store.find(params[:id])
     @promos = Promo.where(store_id: params[:id])
+
+    @markers = [
+      {
+        lat: @store.latitude,
+        lng: @store.longitude
+      }
+    ]
+  end
+
+  def like
+    like = Like.create(promo_id: params[:promo_id], user: current_user)
+    redirect_to likes_path if like.save
   end
 end

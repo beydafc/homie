@@ -8,3 +8,26 @@
   box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
   transform: translateY(-12px);
 }
+
+.card-img-top {
+  min-height: 200px;
+  width: 100%;
+}
+.card-body {
+  max-height: 90px;
+  padding: 10px;
+}
+
+.card-promo {
+  position: relative;
+}
+
+.btn-like {
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}

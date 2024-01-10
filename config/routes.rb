@@ -2,21 +2,20 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
-  
+
   devise_for :users
   root to: "pages#home"
 
   get "stores_home", to: "stores#stores_home", as: :stores_home
   resources :stores, only: %i[index show]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :likes, only: %i[index]
+  post "store/promo/like", to: "stores#like", as: :like
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
-
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
   get "users", to: "pages#user_index", as: "users"
   get "users/:id", to: "pages#user_show", as: "user"
   post "chatrooms", to: "chatrooms#create"
