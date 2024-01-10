@@ -4,6 +4,8 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    
+    @like = Like.find(params[:id])
+    @like.destroy
+    redirect_to likes_path, status: :see_other
   end
 end
