@@ -1,28 +1,23 @@
 <h2>Messages with <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %></h2>
 
-<div class="container chatroom">
-  <div class="messages">
-    <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= message.user.first_name %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
-    <% end %>
-  </div>
+<div class="container">
+  <div class="container chatroom" data-controller="chatroom-subscriptions"
+    data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>">
+    <div class="messages" data-chatroom-subscriptions-target="messages">
+      <% @chatroom.messages.each do |message| %>
+          <%= render "messages/message", message: message %>
+        </div>
+      <% end %>
+    </div>
 
 
-<%= simple_form_for [@chatroom, @message],
-  html: {class: "d-flex"} do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message ##{@chatroom.participants.where.not(user: current_user)[0].user.first_name}",
-    wrapper_html: {class: "flex-grow-1"}
-  %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-<% end %>
-
+  <%= simple_form_for [@chatroom, @message],
+    html: {class: "d-flex"} do |f| %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message ##{@chatroom.participants.where.not(user: current_user)[0].user.first_name}",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <% end %>
 </div>
