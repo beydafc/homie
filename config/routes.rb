@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+    resources :chatrooms, only: :show do
+      resources :messages, only: :create
+    end
+
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,4 +13,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get "users", to: "pages#user_index", as: "users"
+  get "users/:id", to: "pages#user_show", as: "users/id"
+  post "chatrooms", to: "chatrooms#create"
+  post "participants", to: "participants#create"
+  get "chatroom/:id", to: "chatrooms#show"
+  post "chatroom/:id", to: "messages#create"
+
 end
