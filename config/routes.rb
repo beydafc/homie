@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "users", to: "pages#user_index", as: "users"
-  get "users/:id", to: "pages#user_show", as: "users/id"
+  get "users/:id", to: "pages#user_show", as: "user"
   post "chatrooms", to: "chatrooms#create"
   post "participants", to: "participants#create"
   get "chatroom/:id", to: "chatrooms#show"
