@@ -4,18 +4,21 @@
   </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 40px;">
- <% @users.each do |user| %>
- <%= link_to user, class: "text-decoration-none" do %>
-  <div class="col">
-    <div class="card h-100" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-      <%= cl_image_tag user.photo.key %>
-        <div class="card-body">
-            <h5 class="card-title"><%= user.first_name %> <%= user.last_name %></h5>
-          <p class="card-text"><%= user.description %></p>
-        </div>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="justify-content-center">
+        <% @users.each do |user| %>
+          <%= link_to user, class: "text-decoration-none justify-content-center" do %>
+            <div class="card-user">
+              <%= cl_image_tag user.photo.key, class: "card-user-img" %>
+              <div class="card-user-infos">
+                <h2><%= user.first_name %></h2>
+                <p><%= user.description %></p>
+                <i class="btn btn-blue">Start a conversation!</i>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
     </div>
- <% end %>
-<% end %>
+  </div>
 </div>
