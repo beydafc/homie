@@ -22,8 +22,6 @@ Rails.application.routes.draw do
   post "participants", to: "participants#create"
   get "chatroom/:id", to: "chatrooms#show"
   post "chatroom/:id", to: "messages#create"
-  
-  get "states", to: "states#index"
-  get "states/:id", to: "states#show"
-  
+
+  resources :states, only: %i[index show]
 end
