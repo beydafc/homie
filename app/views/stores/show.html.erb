@@ -11,7 +11,7 @@
       <h4 class="mb-4"><%= @store.address %></h4>
       <h6><%= @store.description %></h6>
     </div>
-    <div class="col-2" style="width: 200px; height: 200px; border-radius: 10px;"
+    <div class="col-2 shadow" style="width: 200px; height: 200px; border-radius: 10px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -19,7 +19,7 @@
   </div>
 </div>
 <h4 class="mt-5 ps-4 promo-title">PROMOCIONES</h4>
-<div class="container mt-4">
+<div class="container mt-4 mb-5">
   <div class="row d-flex justify-content-center">
     <% @store.promos.each do |promo|%>
       <div class="col-3 m-3">
