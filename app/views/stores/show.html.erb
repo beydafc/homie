@@ -28,8 +28,8 @@
       <div class="col-3 m-3">
         <div class="shadow card-promo" style="width: 18rem;">
           <%= image_tag promo.photo, class: "card-img-top" %>
-            <%= button_to like_path(promo_id: promo.id), class: "btn btn-sm shadow btn-like" do %>
-              <i class="fa-solid fa-heart" style="color: red;"></i>
+            <%= button_to like_post_path(promo_id: promo.id), class: "btn btn-sm shadow btn-like" do %>
+              <i class="fa-solid fa-heart text-warning"></i>
             <% end  %>
           <div class="card-body">
             <h5 class="card-title"><%= promo.name %></h5>

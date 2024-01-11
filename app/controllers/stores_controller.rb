@@ -34,6 +34,6 @@ class StoresController < ApplicationController
 
   def like
     like = Like.create(promo_id: params[:promo_id], user: current_user)
-    redirect_to likes_path if like.save
+    redirect_to store_path(Promo.find(params[:promo_id]).store) if like.save
   end
 end
