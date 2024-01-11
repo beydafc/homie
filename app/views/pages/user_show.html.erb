@@ -1,3 +1,27 @@
-<h2><%= @user.first_name %><%= @user.first_name %></h2>
-
-<h3>About: <%= @user.description  %></h3>
+<div class="container">
+  <div class="container-top">
+      <div class="d-flex justify-content-around">
+      <div class="container-name">
+        <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+        <h2><strong><%= @user.first_name %> <%= @user.last_name %></strong></h2>
+        <h4><%= @user.age %> years / <%= @user.university %></h4>
+      </div>
+      <div class="container-map">
+        <h4><%= @user.first_name %>´s location</h4>
+        <div class="col-2 shadow" style="width: 200px; height: 200px; border-radius: 10px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+        <div class="button-user">
+          <%= button_to participation_path(user_id: @user.id), class: "btn btn-blue-show" do %>
+            <i>Start a conversation!</i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="container-bottom">
+      <p><%= @user.description %></p>
+    </div>
+  </div>
+</div>
