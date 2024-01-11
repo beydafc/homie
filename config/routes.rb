@@ -28,3 +28,5 @@ Rails.application.routes.draw do
 
   get "states", to: "states#index"
   get "states/:id", to: "states#show"
+
+end
