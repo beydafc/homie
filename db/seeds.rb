@@ -132,6 +132,107 @@ guanajuato.photo.attach(io: guanajuato_file, filename: "gto.png", content_type: 
 guanajuato.save!
 
 puts "#{guanajuato.name} created!"
+
+
+guerrero = State.new(name: "Guerreo", address: "blvd vicente guerrero 72 guerrero, mexico", capital: "Chilpancingo", population: 3.6, life_cost: 9200, weather: "Cálido", contact_number: "747 471 9802")
+
+guerrero_file = URI.open("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/196000/196182-Guerrero.jpg")
+guerrero.photo.attach(io: guerrero_file, filename: "grro.png", content_type: "image/png")
+
+guerrero.save!
+
+puts "#{guerrero.name} created!"
+
+
+hidalgo = State.new(name: "Hidalgo", address: "felipe angeles 101 hidalgo, mexico", capital: "Pachuca", population: 2.9, life_cost: 9000, weather: "Seco", contact_number: "686 904 4100")
+
+hidalgo_file = URI.open("https://www.gob.mx/cms/uploads/article/main_image/76278/Hidalgo.jpg")
+hidalgo.photo.attach(io: hidalgo_file, filename: "hgo.png", content_type: "image/png")
+
+hidalgo.save!
+
+puts "#{hidalgo.name} created!"
+
+
+jalisco = State.new(name: "Jalisco", address: "av fray antonio alcalde 1221 jalisco, mexico", capital: "Guadalajara", population: 8.1, life_cost: 12500, weather: "Cálido", contact_number: "800 525 4726")
+
+jalisco_file = URI.open("https://www.mimexico360.com/wp-content/uploads/2019/12/Guadalajara-Jalisco-Fotograf%C3%ADa-Miguel-Angel-Victoria.jpg")
+jalisco.photo.attach(io: jalisco_file, filename: "gdl.png", content_type: "image/png")
+
+jalisco.save!
+
+puts "#{jalisco.name} created!"
+
+
+michoacan = State.new(name: "Michoacán", address: "av madero poniente 63 michoacan, mexico", capital: "Morelia", population: 4.6, life_cost: 14000, weather: "Cálido", contact_number: "443 322 9000")
+
+michoacan_file = URI.open("https://i.pinimg.com/736x/60/37/c4/6037c46f8f216ed3e023f1ea3378d1f9.jpg")
+michoacan.photo.attach(io: michoacan_file, filename: "more.png", content_type: "image/png")
+
+michoacan.save!
+
+puts "#{michoacan.name} created!"
+
+
+morelos = State.new(name: "Morelos", address: "batalla 19 de febrero 71 morelos, mexico", capital: "Cuernavaca", population: 1.9, life_cost: 14000, weather: "Templado", contact_number: "777 329 2200")
+
+morelos_file = URI.open("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/228000/228089-Morelos-Province.jpg")
+morelos.photo.attach(io: morelos_file, filename: "mor.png", content_type: "image/png")
+
+morelos.save!
+
+puts "#{morelos.name} created!"
+
+
+nayarit = State.new(name: "Nayarit", address: "enrique mejia 35 nayarit, mexico", capital: "Tepic", population: 1.2, life_cost: 8500, weather: "Cálido", contact_number: "311 215 5242")
+
+nayarit_file = URI.open("https://media.glamour.mx/photos/62f6ff99d31e31c93b37d4c2/16:9/w_2560%2Cc_limit/puntademitak.jpg")
+nayarit.photo.attach(io: nayarit_file, filename: "nay.png", content_type: "image/png")
+
+nayarit.save!
+
+puts "#{nayarit.name} created!"
+
+
+nuevo_leon = State.new(name: "Nuevo León", address: "mariano escobedo 333 nuevo leon, mexico", capital: "Monterrey", population: 5.2, life_cost: 15200, weather: "Semiseco", contact_number: "812 020 5600")
+
+nl_file = URI.open("https://e0.pxfuel.com/wallpapers/51/624/desktop-wallpaper-nuevo-leon-registrara-clima-calido-y-vientos-cerro-de-la-silla-monterrey.jpg")
+nuevo_leon.photo.attach(io: nl_file, filename: "nl.png", content_type: "image/png")
+
+nuevo_leon.save!
+
+puts "#{nuevo_leon.name} created!"
+
+
+oaxaca = State.new(name: "Oaxaca", address: "privada yagul 204 oaxaca, mexico", capital: "Oaxaca", population: 4.06, life_cost: 10700, weather: "Cálido", contact_number: "915 516 4705")
+
+oax_file = URI.open("https://cdn.fortunaypoder.com/2017/11/Ruta-Oaxaca.jpg")
+oaxaca.photo.attach(io: oax_file, filename: "oax.png", content_type: "image/png")
+
+oaxaca.save!
+
+puts "#{oaxaca.name} created!"
+
+
+puebla = State.new(name: "Puebla", address: "av 51 poniente 919 puebla, mexico", capital: "Puebla", population: 6.3, life_cost: 10200, weather: "Templado", contact_number: "222 237 4681")
+
+pue_file = URI.open("https://visitmexico.com/wp-content/uploads/2022/09/Zocalo.png")
+puebla.photo.attach(io: pue_file, filename: "pue.png", content_type: "image/png")
+
+puebla.save!
+
+puts "#{puebla.name} created!"
+
+
+queretaro = State.create!(name: "Querétaro", address: "5 de mayo 45 queretaro, mexico", capital: "Santiago de Querétaro", population: 2.5, life_cost: 11500, weather: "Semiárido", contact_number: "442 238 5000")
+
+qro_file = URI.open("https://t4.ftcdn.net/jpg/04/11/69/39/360_F_411693965_yhYb9UPKFkRjaCaVeQdFBrggsv38o8yc.jpg")
+queretaro.photo.attach(io: qro_file, filename: "qro.png", content_type: "image/png")
+
+queretaro.save!
+
+puts "#{queretaro.name} created!"
+
 puts "States ready"
 
 ###################################      USERS     ###################################
@@ -262,7 +363,7 @@ puts "#{s5.name} created"
 s6 = Store.new(
   category: "Entertainment",
   address: "av aguascalientes 1601 aguascalientes, mexico",
-  name: "Cinépolis Aguscalientes",
+  name: "Cinépolis Aguascalientes",
   description: "Cinépolis es una empresa mexicana dedicada a la exhibición de películas fundada en 1971 en Morelia, Michoacán, bajo el nombre de Organización Ramírez.",
   state_id: aguascalientes.id
 )
