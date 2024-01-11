@@ -8,17 +8,21 @@
   <div class="row">
     <div class="justify-content-center">
         <% @users.each do |user| %>
-          <%= link_to user, class: "text-decoration-none justify-content-center" do %>
+          <%#= link_to user, class: "text-decoration-none justify-content-center" do %>
             <div class="card-user">
               <%= cl_image_tag user.photo.key, class: "card-user-img" %>
               <div class="card-user-infos">
                 <h2><%= user.first_name %></h2>
                 <p><%= user.description %></p>
-                <i class="btn btn-blue">Start a conversation!</i>
+                <%= button_to participation_path(user_id: user.id), class: "btn btn-blue" do %>
+                  <i>Start a conversation!</i>
+                <% end %>
               </div>
             </div>
-          <% end %>
+          <%# end %>
         <% end %>
     </div>
   </div>
 </div>
+
+<%= console %>
