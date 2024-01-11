@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: %i[show] do
     resources :messages, only: :create
   end
   resources :likes, only: %i[index destroy]
@@ -13,20 +13,11 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :chatrooms, only: :show do
-    resources :messages, only: :create
-  end
   get "users", to: "pages#user_index", as: "users"
   get "users/:id", to: "pages#user_show", as: "user"
-  post "chatrooms", to: "chatrooms#create"
 
   post "participants", to: "participants#create", as: :participation
   post "participants/chatroom", to: "participants#chatroom", as: :new_chatroom
 
-  get "chatroom/:id", to: "chatrooms#show"
-  post "chatroom/:id", to: "messages#create"
-
-  get "states", to: "states#index"
-  get "states/:id", to: "states#show"
-
+  resources :states, only: %i[index show]
 end
