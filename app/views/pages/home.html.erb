@@ -35,14 +35,26 @@
     <% end %>
   </div>
   <div class="col">
-    <%= link_to states_path, class: "text-decoration-none" do %>
-      <div class="card h-100" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-        <img src="https://cdn.forbes.com.mx/2015/05/google_maps.jpg" class="card-img-top card-product-img" style="height: 20; width: 20;">
-          <div class="card-body">
-            <h5 class="card-title">City Data</h5>
-            <p class="card-text">Get to know your new city!</p>
-          </div>
-      </div>
+    <% if user_signed_in?  %>
+      <%= link_to state_path(@state), class: "text-decoration-none" do %>
+        <div class="card h-100" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <img src="https://cdn.forbes.com.mx/2015/05/google_maps.jpg" class="card-img-top card-product-img" style="height: 20; width: 20;">
+            <div class="card-body">
+              <h5 class="card-title">City Data</h5>
+              <p class="card-text">Get to know your new city!</p>
+            </div>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to states_path, class: "text-decoration-none" do %>
+        <div class="card h-100" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <img src="https://cdn.forbes.com.mx/2015/05/google_maps.jpg" class="card-img-top card-product-img" style="height: 20; width: 20;">
+            <div class="card-body">
+              <h5 class="card-title">City Data</h5>
+              <p class="card-text">Get to know your new city!</p>
+            </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
