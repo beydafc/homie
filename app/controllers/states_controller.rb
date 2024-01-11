@@ -5,6 +5,7 @@ class StatesController < ApplicationController
   end
 
   def show
+    @states = State.all
     @state = State.find(params[:id])
 
     @markers = [

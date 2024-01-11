@@ -3,27 +3,49 @@
     <div class="ml-5" >
       <div class="mt-2">
         <div class="container,d-flex, mx-5, px-5" >
-          <%= form_with url: states_path, method: :get do %>
-          <%= text_field_tag :query, nil, class: "form-control", placeholder: @state.name %>
-         <!-- <h3 class="text-warning">Enter your city name and press enter!</h3> -->
+          <%= render "states/dropdown"%>
         </div>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
 
-<div>
-<%= form_with url: states_path, method: :get do %>
-<h3 class= "text-warning"><%= @state.name %></h3>
-  <ul class="list-group list-group-flush" >
-    <li class="list-group-item"><strong>Capital: </strong><%= @state.capital %></li>
-    <li class="list-group-item"><strong>Poblacion:  </strong><%= @state.population %></li>
-    <li class="list-group-item"><strong>Costo de vida: </strong><%= @state.life_cost %></li>
-    <li class="list-group-item"><strong>Clima: </strong><%= @state.weather %></li>
-    <li class="list-group-item"><strong>Contacto Gobierno: </strong><%= @state.contact_number %></li>
-  </ul>
-<% end %>
+<div class="container mt-5 p-3 mb-5">
+  <h4 class="text-warning ms-5 ps-5 mb-4"><strong><%= @state.name %></strong></h4>
+  <table class="table text-align-center" style="width: 90%; margin: 0 auto;">
+    <tbody>
+        <tr>
+          <th scope="row"><i class="fa-solid fa-location-dot" style="font-size: 20px;"></i></th>
+          <td>Capital</td>
+          <td class="text-secondary"><%= @state.capital %></td>
+          <td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="fa-solid fa-person" style="font-size: 20px;"></i></th>
+          <td>Population</td>
+          <td class="text-secondary"><%= @state.population %> millions</td>
+          <td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="fa-solid fa-sack-dollar" style="font-size: 20px;"></i></th>
+          <td>Life cost</td>
+          <td class="text-secondary">$<%= @state.life_cost %> MXN +</td>
+          <td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="fa-solid fa-cloud" style="font-size: 20px;"></i></th>
+          <td>Weather</td>
+          <td class="text-secondary"><%= @state.weather %></td>
+          <td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="fa-solid fa-phone" style="font-size: 20px;"></i></th>
+          <td>Contact</td>
+          <td class="text-secondary"><%= @state.contact_number %></td>
+          <td>
+        </tr>
+    </tbody>
+</table>
 </div>
 <!-- Inicio mapa-->
   <div style="width: 100%; height: 400px;"
