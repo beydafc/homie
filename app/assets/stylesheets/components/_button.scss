@@ -11,3 +11,18 @@
   background: #e5a605;
   color: white;
 }
+
+.btn-blue {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #219EBC;
+  transition: background 0.3s ease;
+  margin-right: 20px;
+  font-size: 11px;
+}
+
+.btn-blue:hover {
+  background: #27c4eb;
+  color: white;
+}

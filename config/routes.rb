@@ -19,9 +19,12 @@ Rails.application.routes.draw do
   get "users", to: "pages#user_index", as: "users"
   get "users/:id", to: "pages#user_show", as: "user"
   post "chatrooms", to: "chatrooms#create"
-  post "participants", to: "participants#create"
+
+  post "participants", to: "participants#create", as: :participation
+  post "participants/chatroom", to: "participants#chatroom", as: :new_chatroom
+
   get "chatroom/:id", to: "chatrooms#show"
   post "chatroom/:id", to: "messages#create"
 
-  resources :states, only: %i[index show]
-end
+  get "states", to: "states#index"
+  get "states/:id", to: "states#show"
