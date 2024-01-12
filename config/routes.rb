@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "stores_home", to: "stores#stores_home", as: :stores_home
-  resources :stores, only: %i[index show]
+  resources :stores, only: %i[index show] do
+    resources :reviews, only: [:new, :create]
+  end
+  
   post "store/promo/like", to: "stores#like", as: :like_post
 
   get "up" => "rails/health#show", as: :rails_health_check
@@ -20,4 +23,6 @@ Rails.application.routes.draw do
   post "participants/chatroom", to: "participants#chatroom", as: :new_chatroom
 
   resources :states, only: %i[index show]
+
+
 end
