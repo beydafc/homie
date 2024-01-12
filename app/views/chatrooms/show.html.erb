@@ -8,7 +8,7 @@
 
   <div class="flex-container, my-5">
       <h2>Messages with <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %></h2>
-        <div>
+
 
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
