@@ -8,9 +8,10 @@
   <div class="row">
     <div class="justify-content-center">
         <% @users.each do |user| %>
-          <%#= link_to user, class: "text-decoration-none justify-content-center" do %>
             <div class="card-user">
-              <%= cl_image_tag user.photo.key, class: "card-user-img" %>
+              <%= link_to user, class: "text-decoration-none justify-content-center h-100" do %>
+                <%= cl_image_tag user.photo.key, class: "card-user-img" %>
+              <% end %>
               <div class="card-user-infos">
                 <h3><%= user.first_name %></h3>
                 <p><%= user.description %></p>
@@ -19,7 +20,6 @@
                 <% end %>
               </div>
             </div>
-          <%# end %>
         <% end %>
     </div>
   </div>

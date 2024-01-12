@@ -4,6 +4,7 @@ class ChatroomsController < ApplicationController
   end
 
   def show
+    @users = User.last(4)
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
   end
