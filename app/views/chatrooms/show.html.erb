@@ -8,22 +8,22 @@
 
   <div class="flex-container, my-5">
       <h2>Messages with <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %></h2>
-        <div>Attach your fav sales..
-          <div class="btn-group">
-              <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Promos
-              </button>
-                <% current_user.likes.each do |like| %>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/stores/<%= like.promo %>"> <%=  like.promo.store.name %></a>
-                </div>
-          <% end %>
+
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pick your fav sale..
+            </button>
+            <ul class="dropdown-menu">
+              <% current_user.likes.each do |like|  %>
+                <li><%= link_to "#{like.promo.name}", store_path(like.promo.store), class: "dropdown-item" %></li>
+              <% end %>
+            </ul>
+          </div>
+
+
         </div>
-
-
-
-    </div>
-        </div>
+  </div>
       <div class="container">
         <div class="container chatroom" data-controller="chatroom-subscriptions"
           data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>">
