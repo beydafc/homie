@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :stores, only: %i[index show] do
     resources :reviews, only: [:new, :create]
   end
-  
+
   post "store/promo/like", to: "stores#like", as: :like_post
 
   get "up" => "rails/health#show", as: :rails_health_check

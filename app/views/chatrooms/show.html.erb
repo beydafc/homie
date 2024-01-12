@@ -1,48 +1,47 @@
 
 <div class="container my-5">
   <div class="flex-container, mx-5">
-    <% @chatroom.participants.where.not(user: current_user).each do |userr| %>
-      <%=  cl_image_tag userr.user.photo.key, class: "avatar", alt: "avatar"  %>
+    <%# @chatroom.participants.where.not(user: current_user).each do |userr| %>
+      <%#=  cl_image_tag userr.user.photo.key, class: "avatar", alt: "avatar"  %>
+    <%# end %>
+  </div>
+
+  <div class="flex-container, mx-5">
+    <% @users.each do |userrr| %>
+      <%=  cl_image_tag userrr.photo.key, class: "avatar", alt: "avatar"  %>
     <% end %>
   </div>
 
-  <div class="flex-container, my-5">
+  <div>
+    <div class="flex-container, my-5">
       <h2>Messages with <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %></h2>
-
-
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Pick your fav sale..
-            </button>
-            <ul class="dropdown-menu">
-              <% current_user.likes.each do |like|  %>
-                <li><%= link_to "#{like.promo.name}", store_path(like.promo.store), class: "dropdown-item" %></li>
-              <% end %>
-            </ul>
-          </div>
-
-
-        </div>
-  </div>
-      <div class="container">
-        <div class="container chatroom" data-controller="chatroom-subscriptions"
-          data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>">
-            <div class="messages" data-chatroom-subscriptions-target="messages">
-              <% @chatroom.messages.each do |message| %>
-                <%= render "messages/message", message: message %>
-              <% end %>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #FFB703;">
+          <span style="color: white">Send a promo</span>
+        </button>
+        <ul class="dropdown-menu">
+          <% current_user.likes.each do |like|  %>
+            <div data-controller="promo-message" data-promo-message-store-id-value="<%= like.promo.store_id %>">
+              <li data-action="click->promo-message#click"><%= like.promo.store.name %> - <%= like.promo.name %></li>
             </div>
-        </div>
+          <% end %>
+        </ul>
       </div>
-
-    <%= simple_form_for [@chatroom, @message],
-      html: {class: "d-flex"} do |f| %>
-      <%= f.input :content,
-       label: false,
-       placeholder: "Message ##{@chatroom.participants.where.not(user: current_user)[0].user.first_name}",
-       wrapper_html: {class: "flex-grow-1"}
-      %>
-      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-    <% end %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="container chatroom" data-controller="chatroom-subscriptions" data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>">
+      <div class="messages" data-chatroom-subscriptions-target="messages">
+        <% @chatroom.messages.each do |message| %>
+          <%= render "messages/message", message: message %>
+        <% end %>
+        <a href=""></a>
+      </div>
+    </div>
   </div>
 </div>
+
+<%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.participants.where.not(user: current_user)[0].user.first_name}", wrapper_html: {class: "flex-grow-1"} %>
+  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+<% end %>

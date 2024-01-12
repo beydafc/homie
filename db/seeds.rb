@@ -170,6 +170,25 @@ user3.save!
 
 puts "User #{user3.first_name} created!"
 
+
+user4 = User.new( email: "maria@hotmail.com", password: "123456", first_name: "Maria", last_name: "Hernandez", description: "Hola a todos", age: 28, university: "Universidad ITESM", state_id: colima.id)
+
+user4_file = URI.open("https://img.freepik.com/premium-photo/multiracial-people-taking-selfie-outdoors-happy-life-style-concept-with-young-smiling-having-fun_325573-774.jpg")
+user4.photo.attach(io: user4_file, filename: "mh.png", content_type: "image/png")
+
+user4.save!
+
+puts "User #{user4.first_name} created!"
+
+user5 = User.new( email: "armando@hotmail.com", password: "123456", first_name: "Armando", last_name: "Palesino", description: "Hola a todos", age: 28, university: "UNAM", state_id: cdmx.id)
+
+user5_file = URI.open("https://coralearning.org/wp-content/uploads/2015/08/teaching-men-of-color-in-community-colleges.jpg")
+user5.photo.attach(io: user5_file, filename: "ap.png", content_type: "image/png")
+
+user5.save!
+
+puts "User #{user5.first_name} created!"
+
 puts "Users ready"
 
 
@@ -309,6 +328,107 @@ puts "#{s8.name} created"
 
 puts "Stores ready"
 
+########################################## TIENDAS EXTRAS PARA DEMO ###############################################
+########################################## BORRAR DESPUES ##########################################
+
+sp1 = Store.new(
+  category: "Beauty",
+  address: "la mora 446 aguascalientes, mexico",
+  name: "SPA México",
+  description: "Excelente servicio, atención y lugar agradable, con estacionamiento y servicio de temazcal, jacuzzi, y masaje. Un lugar para relajarte y aprovechar los beneficios del temazcal.",
+  state_id: colima.id
+)
+
+sp1_file = URI.open("https://res.cloudinary.com/du5jifpgg/image/upload/t_opengraph_image/Parcours/Tops/Shopping-dans-les-grands-magasins/Header_Samaritaine.jpg")
+sp1.photo.attach(io: sp1_file, filename: "s4.png", content_type: "image/png")
+
+sp1.save!
+
+puts "#{sp1.name} created"
+
+
+sp2 = Store.new(
+  category: "Beauty",
+  address: "silos 201 aguascalientes, mexico",
+  name: "Nails cdmx",
+  description: "Profesionales con 25 años de experiencia en el cuidado estético de tu rostro y cuerpo. Ofrecemos una amplia gama de tratamientos faciales, masajes reductivos, moldeadores, reafirmantes, limpiezas faciales, yoga facial, rejuvenecimiento facial, barras access y depilación. Combinamos los beneficios de la aparatología con nuestros expertos, dando resultados reales y seguros en nuestros tratamientos. Belleza natural",
+  state_id: cdmx.id
+)
+
+sp2_file = URI.open("https://hips.hearstapps.com/hmg-prod/images/townhouse-covent-garden-7-copy-1674660795.jpg")
+sp2.photo.attach(io: sp2_file, filename: "s5.png", content_type: "image/png")
+
+sp2.save!
+
+puts "#{sp2.name} created"
+
+
+sp3 = Store.new(
+  category: "Entertainment",
+  address: "av aguascalientes 1601 aguascalientes, mexico",
+  name: "Pulso GNP",
+  description: "Cinépolis es una empresa mexicana dedicada a la exhibición de películas fundada en 1971 en Morelia, Michoacán, bajo el nombre de Organización Ramírez.",
+  state_id: cdmx.id
+)
+
+sp3_file = URI.open("https://traveler.marriott.com/es/wp-content/uploads/sites/2/2019/09/PalNorte_cLaurenSarahCocking.jpg")
+sp3.photo.attach(io: sp3_file, filename: "s6.png", content_type: "image/png")
+
+sp3.save!
+
+puts "#{sp3.name} created"
+
+sp4 = Store.new(
+  category: "Entertainment",
+  address: "av aguascalientes 1601 aguascalientes, mexico",
+  name: "Pulso GNP",
+  description: "Cinépolis es una empresa mexicana dedicada a la exhibición de películas fundada en 1971 en Morelia, Michoacán, bajo el nombre de Organización Ramírez.",
+  state_id: baja_california.id
+)
+
+sp4_file = URI.open("https://tiempolibreqro.com/wp-content/uploads/2019/03/Mariachela_.jpg")
+sp4.photo.attach(io: sp4_file, filename: "s6.png", content_type: "image/png")
+
+sp4.save!
+
+puts "#{sp4.name} created"
+
+################### BAJA CALIFORNIA #################
+
+s7 = Store.new(
+  category: "Restaurant",
+  address: "carretera ensenada 85 baja california, mexico",
+  name: "Deckmans",
+  description: "Deliciosa comida en un lugar muy pintoresco y lleno de detalles muy lindos. De los 4 mejores lugares Del Valle de Guadalupe para comer o cenar.",
+  state_id: baja_california.id
+)
+
+s7_file = URI.open("https://newworldreview.com/wp-content/uploads/2013/08/IMG_7914.jpg")
+s7.photo.attach(io: s7_file, filename: "s7.png", content_type: "image/png")
+
+s7.save!
+
+puts "#{s7.name} created"
+
+s8 = Store.new(
+  category: "Restaurant",
+  address: "carretera tijuana 106 baja california, mexico",
+  name: "El Restaurante en Punta Morro",
+  description: "Nuestro restaurante se encuentra en una ubicación asombrosa con vista panorámica hacia la bahía de Ensenada, donde puede contemplar el oleaje y un espectacular atardecer como en ningún otro lugar mientras degusta uno de nuestros mejores vinos.",
+  state_id: baja_california.id
+)
+
+s8_file = URI.open("https://resizer.otstatic.com/v2/photos/wide-xlarge/2/55473946.jpg")
+s8.photo.attach(io: s8_file, filename: "s8.png", content_type: "image/png")
+
+s8.save!
+
+puts "#{s8.name} created"
+
+
+puts "Stores ready"
+
+
 ###################################      PROMOS     ###################################
 
 
@@ -345,6 +465,10 @@ promo16 = Promo.new( name: "2x1", description: "Great promo!", store_id: s6.id)
 promo17 = Promo.new( name: "2x1", description: "Great promo!", store_id: s6.id)
 promo18 = Promo.new( name: "2x1", description: "Great promo!", store_id: s6.id)
 
+promo19 = Promo.new( name: "2x1", description: "Great promo!", store_id: s7.id)
+promo20 = Promo.new( name: "2x1", description: "Great promo!", store_id: s7.id)
+promo21 = Promo.new( name: "2x1", description: "Great promo!", store_id: s7.id)
+
 promo1.save!
 promo2.save!
 promo3.save!
@@ -363,6 +487,9 @@ promo15.save!
 promo16.save!
 promo17.save!
 promo18.save!
+promo19.save!
+promo20.save!
+promo21.save!
 
 
 puts "Adding photos to Promos"
