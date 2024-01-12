@@ -18,6 +18,11 @@ class StoresController < ApplicationController
         lng: store.longitude
       }
     end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "stores/list", locals: { stores: @stores }, formats: [:html] }
+    end
   end
 
   def show

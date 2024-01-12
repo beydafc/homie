@@ -87,3 +87,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Pundit authorization
+gem "pundit"
