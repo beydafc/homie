@@ -16,17 +16,7 @@
     </div>
   </div>
 
-  <%# Lista de stores %>
-  <div class="container mt-3" data-search-stores-target="list">
+  <%# Lista de stores  y map %>
     <%= render "stores/list", stores: @stores %>
-  </div>
-  <%# fin lista stores %>
-
-  <!-- Inicio mapa-->
-  <div style="width: 100%; height: 400px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-    <!--Termino mapa-->
+  <%# fin lista stores y map %>
 </div>

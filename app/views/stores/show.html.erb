@@ -19,14 +19,20 @@
   </div>
 </div>
 <h4 class="mt-5 ps-4 promo-title">PROMOCIONES</h4>
-<div class="container mt-4 mb-5">
+<div class="mt-4 mb-5">
   <div class="row d-flex justify-content-center">
     <% @store.promos.each do |promo|%>
       <div class="col-3 m-3">
         <div class="shadow card-promo" style="width: 18rem;">
           <%= image_tag promo.photo, class: "card-img-top" %>
-            <%= button_to like_post_path(promo_id: promo.id), class: "btn btn-sm shadow btn-like" do %>
-              <i class="fa-solid fa-heart text-warning"></i>
+            <% if Like.find_by(user: current_user, promo: promo)%> <%#Evitar querys en vistas para el futuro%>
+              <%= link_to like_path(Like.find_by(promo: promo).id), class: "btn btn-sm shadow btn-like", data: {turbo_method: :delete} do %>
+                <i class="fa-solid fa-trash-can text-secondary"></i>
+              <% end %>
+            <% else %>
+              <%= button_to like_post_path(promo_id: promo.id), class: "btn btn-sm shadow btn-like" do %>
+                <i class="fa-solid fa-heart text-warning"></i>
+              <% end  %>
             <% end  %>
           <div class="card-body">
             <h5 class="card-title"><%= promo.name %></h5>
