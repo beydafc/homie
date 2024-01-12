@@ -1,0 +1,22 @@
+
+      <div class="row mb-5 mt-4" >
+        <% stores.each do |store| %>
+          <!--Inicio de cards-->
+          <div class="col-4 mb-4">
+            <%= link_to store_path(store), class: "text-decoration-none" do %>
+              <div data-aos="zoom-in" class="card h-100" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <%= image_tag(store.photo, :class => "card-img-top card-product-img", :style => "height: 20; width: 20;")%>
+                <div class="card-body">
+                  <%= store.name %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <!-- Fin cards-->
+        <%end %>
+      </div>
+
+
+<script>
+  AOS.init();
+</script>

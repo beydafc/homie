@@ -1,29 +1,32 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1536010305525-f7aa0834e2c7?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-  <div class="container">
-    <div>
-      <%= form_with url: stores_path, method: :get do %>
-      <%= text_field_tag :query, nil, class: "form-control", placeholder:"Look for best stores for you!"%>
-      <% end %>
+<div data-controller="search-stores">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1536010305525-f7aa0834e2c7?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <div class="container">
+      <div>
+        <%= form_with url: stores_path, method: :get,
+        html: {data: {search_stores_target: "form"}} do %>
+        <%= text_field_tag :query, nil, class: "form-control",
+        placeholder:"Look for best stores for you!",
+        value: params[:query],
+        data: {
+          search_stores_target: "input",
+          action: "keyup->search-stores#update"
+          }%>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container mt-3">
-    <div class="row mb-5 mt-4">
-      <% @stores.each do |store| %>
-        <!--Inicio de cards-->
-        <div class="col-4 mb-4">
-          <%= render "stores/store", store: store %>
-        </div>
-        <!-- Fin cards-->
-      <%end %>
-    </div>
+  <%# Lista de stores %>
+  <div class="container mt-3" data-search-stores-target="list">
+    <%= render "stores/list", stores: @stores %>
   </div>
+  <%# fin lista stores %>
+
   <!-- Inicio mapa-->
   <div style="width: 100%; height: 400px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <!--Termino mapa-->
-
+    <!--Termino mapa-->
+</div>
