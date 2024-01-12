@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "stores_home", to: "stores#stores_home", as: :stores_home
+
   resources :stores, only: %i[index show] do
     resources :reviews, only: [:new, :create]
   end
