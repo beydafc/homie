@@ -3,21 +3,12 @@
     <div class="ml-5" >
       <div class="mt-2">
         <div class="container,d-flex, mx-5, px-5" >
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Escoge el estado
-            </button>
-            <ul class="dropdown-menu">
-              <% @states.each do |state|  %>
-                <li><%= link_to "#{state.name}", state_path(state), class: "dropdown-item" %></li>
-              <% end %>
-            </ul>
-          </div>
+          <%= render "states/dropdown"%>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="container, d-flex, m-5, p-5">
-  <h3 class="fs-1, text-secondary">"Todo lo que necesitas para ser feliz <br> se encuentra al otro lado de<br> tus miedos"</h3>
+<div class="d-flex justify-content-center">
+  <h3 class="fs-4 text-secondary" style="font-style: italic; margin: 90px;">"Todo lo que necesitas para ser feliz <br> se encuentra al otro lado de<br> tus miedos"</h3>
 </div>

@@ -1,0 +1,10 @@
+<div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #FFB703;">
+    <span style="color: white">Select state</span>
+  </button>
+  <ul class="dropdown-menu">
+    <% @states.each do |state|  %>
+      <li><%= link_to "#{state.name}", state_path(state), class: "dropdown-item" %></li>
+    <% end %>
+  </ul>
+</div>

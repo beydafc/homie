@@ -90,3 +90,6 @@ group :test do
 
 
 end
+
+# Pundit authorization
+gem "pundit"
