@@ -78,7 +78,7 @@ puts "#{campeche.name} created!"
 chiapas = State.new(name: "Chiapas", address: "libramiento norte 476 chiapas, mexico", capital: "Tuxtla Guierrez", population: 5.3, life_cost: 8500, weather: "Lluvioso", contact_number: "961 618 7460")
 
 
-chiapas_file = URI.open("https://c0.wallpaperflare.com/preview/284/593/166/chiapas-mexico-nature-jungle.jpg")
+chiapas_file = URI.open("https://images.inmexico.com/2022/01/245511-Chiapas.jpg")
 chiapas.photo.attach(io: chiapas_file, filename: "chiapas.png", content_type: "image/png")
 
 
