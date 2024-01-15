@@ -15,7 +15,8 @@ class PagesController < ApplicationController
     @markers = [
       {
         lat: @user.latitude,
-        lng: @user.longitude
+        lng: @user.longitude,
+        infoWindow: {}
       }
     ]
   end

@@ -34,7 +34,8 @@ class StoresController < ApplicationController
     @markers = [
       {
         lat: @store.latitude,
-        lng: @store.longitude
+        lng: @store.longitude,
+        infoWindow: {}
       }
     ]
   end
