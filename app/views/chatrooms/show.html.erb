@@ -15,18 +15,15 @@
   <div>
     <div class="flex-container, my-5">
       <h2>Messages with <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %></h2>
-      <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #FFB703;">
-          <span style="color: white">Send a promo</span>
-        </button>
-        <ul class="dropdown-menu">
-          <% current_user.likes.each do |like|  %>
-            <div data-controller="promo-message" data-promo-message-store-id-value="<%= like.promo.store_id %>">
-              <li data-action="click->promo-message#click"><%= like.promo.store.name %> - <%= like.promo.name %></li>
-            </div>
-          <% end %>
-        </ul>
-      </div>
+
+      <p>Send a promo to <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %>!</p>
+      <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
+        <%= f.input :content,
+                    collection: like_select_options(current_user.likes),
+                    label: false,
+                    wrapper_html: {class: "flex-grow-1"} %>
+        <%= f.submit "Send", class: "btn btn-yellow mb-3" %>
+      <% end %>
     </div>
   </div>
   <div class="container">
