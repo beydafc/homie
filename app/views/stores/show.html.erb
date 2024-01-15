@@ -5,6 +5,8 @@
     </div>
   </div>
 </div>
+
+
 <div class="container mt-5">
   <div class="d-flex align-items-center">
     <div class="text-center col-10 pe-5">
@@ -43,3 +45,17 @@
     <% end %>
   </div>
 </div>
+
+<div class="point">
+    <div class="container, p-5">
+      <div class="row">
+        <div class="col-xs-4">
+            <%= simple_form_for [@store, @review] do |f| %>
+                <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: { controller: "star-rating", action: "click->form-submit#submit"} }  %>
+                  <%= f.submit%>
+            <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+

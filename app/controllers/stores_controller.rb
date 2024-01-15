@@ -28,6 +28,7 @@ class StoresController < ApplicationController
   def show
     @store = Store.find(params[:id])
     @promos = Promo.where(store_id: params[:id])
+    @review = @store.reviews.build
 
     @markers = [
       {

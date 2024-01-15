@@ -1,6 +1,7 @@
 class Store < ApplicationRecord
   belongs_to :state
   has_many :promos
+  has_many :reviews
 
   # Image hosting
   has_one_attached :photo
