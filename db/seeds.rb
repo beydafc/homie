@@ -760,7 +760,7 @@ s9 = Store.new(
   state_id: aguascalientes.id
 )
 
-s9_file = URI.open("https://www.lja.mx/wp-content/uploads/2019/05/unnamed-2.jpg")
+s9_file = URI.open("https://images.unsplash.com/photo-1592860475958-6d6dd04b34b4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 s9.photo.attach(io: s9_file, filename: "s9.png", content_type: "image/png")
 
 s9.save!
