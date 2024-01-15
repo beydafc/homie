@@ -15,7 +15,9 @@ class StoresController < ApplicationController
     @markers = @stores.geocoded.map do |store|
       {
         lat: store.latitude,
-        lng: store.longitude
+        lng: store.longitude,
+        infoWindow: { content: render_to_string(partial: "/stores/map_box", locals: { store: store }) },
+        id: store.id
       }
     end
 

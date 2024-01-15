@@ -10,7 +10,6 @@ class ParticipantsController < ApplicationController
       hparticipation.chatroom_id
     end
 
-
     condition = false
     @chatroomid = nil
 
@@ -38,5 +37,4 @@ class ParticipantsController < ApplicationController
     @participants = Participant.all
     #(lo vamos a necesitar para mostrar la lista de chats arriba del screen del chat)
   end
-
 end
