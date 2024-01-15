@@ -25,5 +25,5 @@ Rails.application.routes.draw do
 
   resources :states, only: %i[index show]
 
-
+  resources :promos, only: %i[show]
 end

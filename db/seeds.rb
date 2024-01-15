@@ -78,7 +78,7 @@ puts "#{campeche.name} created!"
 chiapas = State.new(name: "Chiapas", address: "libramiento norte 476 chiapas, mexico", capital: "Tuxtla Guierrez", population: 5.3, life_cost: 8500, weather: "Lluvioso", contact_number: "961 618 7460")
 
 
-chiapas_file = URI.open("https://c0.wallpaperflare.com/preview/284/593/166/chiapas-mexico-nature-jungle.jpg")
+chiapas_file = URI.open("https://images.inmexico.com/2022/01/245511-Chiapas.jpg")
 chiapas.photo.attach(io: chiapas_file, filename: "chiapas.png", content_type: "image/png")
 
 
@@ -181,7 +181,7 @@ puts "#{edomex.name} created!"
 guanajuato = State.new(name: "Guanajuato", address: "pedro lascurain de retana 16 guanajuato, mexico", capital: "Guanajuato", population: 5.9, life_cost: 11500, weather: "Templado", contact_number: "473 735 3636")
 
 
-guanajuato_file = URI.open("https://www.wallpaperflare.com/static/978/717/125/guanajuato-mexico-aerial-view-city-wallpaper.jpg")
+guanajuato_file = URI.open("https://images2.alphacoders.com/177/thumb-1920-177742.jpg")
 guanajuato.photo.attach(io: guanajuato_file, filename: "gto.png", content_type: "image/png")
 
 
@@ -286,7 +286,7 @@ puts "#{nayarit.name} created!"
 nuevo_leon = State.new(name: "Nuevo León", address: "mariano escobedo 333 nuevo leon, mexico", capital: "Monterrey", population: 5.2, life_cost: 15200, weather: "Semiseco", contact_number: "812 020 5600")
 
 
-nl_file = URI.open("https://e0.pxfuel.com/wallpapers/51/624/desktop-wallpaper-nuevo-leon-registrara-clima-calido-y-vientos-cerro-de-la-silla-monterrey.jpg")
+nl_file = URI.open("https://wallpapers.com/images/hd/monterrey-pink-sunset-j9m4505ynylvok6p.jpg")
 nuevo_leon.photo.attach(io: nl_file, filename: "nl.png", content_type: "image/png")
 
 
@@ -404,7 +404,7 @@ puts "#{tlaxcala.name} created!"
 
 veracruz = State.create!(name: "Veracruz", address: "alvaro obregon 3 veracruz, mexico", capital: "Xalapa", population: 8.1, life_cost: 10000, weather: "Cálido", contact_number: "228 319 3187")
 
-veracruz_file = URI.open("https://c1.wallpaperflare.com/preview/569/12/969/mexico-veracruz-nature.jpg")
+veracruz_file = URI.open("https://st3.depositphotos.com/13726276/17735/i/450/depositphotos_177352678-stock-photo-atardecer-playa-una-playa-del.jpg")
 veracruz.photo.attach(io: veracruz_file, filename: "ver.png", content_type: "image/png")
 
 veracruz.save!
@@ -760,7 +760,7 @@ s9 = Store.new(
   state_id: aguascalientes.id
 )
 
-s9_file = URI.open("https://www.lja.mx/wp-content/uploads/2019/05/unnamed-2.jpg")
+s9_file = URI.open("https://www.eluniversalpuebla.com.mx/resizer/-L0nXJ6tQscbl7P66TnXNvpHxXU=/1100x666/cloudfront-us-east-1.images.arcpublishing.com/eluniversal/X763AX4DQRH67A4K5W2H27VD5Y.jpg")
 s9.photo.attach(io: s9_file, filename: "s9.png", content_type: "image/png")
 
 s9.save!

@@ -1,0 +1,43 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= url_for @promo.store.photo%>');">
+  <div class="container">
+    <div>
+      <h1 class="shadow"><%= @promo.store.name %></h1>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="d-flex align-items-center">
+    <div class="text-center col-10 pe-5">
+      <h4 class="mb-4"><%= @promo.store.address.upcase %></h4>
+      <h6><%= @promo.store.description %></h6>
+    </div>
+    <div class="col-2 shadow" style="width: 200px; height: 200px; border-radius: 10px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
+<h4 class="mt-5 ps-4 promo-title">Check this promo!</h4>
+<div class="mt-4 mb-5">
+  <div class="row d-flex justify-content-center">
+      <div class="col-3 m-3">
+        <div class="shadow card-promo" style="width: 18rem;">
+          <%= image_tag @promo.photo, class: "card-img-top" %>
+            <% if Like.find_by(user: current_user, promo: @promo)%> <%#Evitar querys en vistas para el futuro%>
+              <%= link_to like_path(Like.find_by(promo: @promo).id), class: "btn btn-sm shadow btn-like", data: {turbo_method: :delete} do %>
+                <i class="fa-solid fa-trash-can text-secondary"></i>
+              <% end %>
+            <% else %>
+              <%= button_to like_post_path(promo_id: @promo.id), class: "btn btn-sm shadow btn-like" do %>
+                <i class="fa-solid fa-heart text-warning"></i>
+              <% end  %>
+            <% end  %>
+          <div class="card-body">
+            <h5 class="card-title"><%= @promo.name %></h5>
+            <p class="card-text"><%= @promo.description %></p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
