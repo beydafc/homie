@@ -181,7 +181,7 @@ puts "#{edomex.name} created!"
 guanajuato = State.new(name: "Guanajuato", address: "pedro lascurain de retana 16 guanajuato, mexico", capital: "Guanajuato", population: 5.9, life_cost: 11500, weather: "Templado", contact_number: "473 735 3636")
 
 
-guanajuato_file = URI.open("https://www.wallpaperflare.com/static/978/717/125/guanajuato-mexico-aerial-view-city-wallpaper.jpg")
+guanajuato_file = URI.open("https://w0.peakpx.com/wallpaper/931/223/HD-wallpaper-guanajuato-cultural-city-gto-house-old-street-travel.jpg")
 guanajuato.photo.attach(io: guanajuato_file, filename: "gto.png", content_type: "image/png")
 
 
