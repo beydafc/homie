@@ -286,7 +286,7 @@ puts "#{nayarit.name} created!"
 nuevo_leon = State.new(name: "Nuevo León", address: "mariano escobedo 333 nuevo leon, mexico", capital: "Monterrey", population: 5.2, life_cost: 15200, weather: "Semiseco", contact_number: "812 020 5600")
 
 
-nl_file = URI.open("https://e0.pxfuel.com/wallpapers/51/624/desktop-wallpaper-nuevo-leon-registrara-clima-calido-y-vientos-cerro-de-la-silla-monterrey.jpg")
+nl_file = URI.open("https://wallpapers.com/images/hd/monterrey-pink-sunset-j9m4505ynylvok6p.jpg")
 nuevo_leon.photo.attach(io: nl_file, filename: "nl.png", content_type: "image/png")
 
 
