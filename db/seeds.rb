@@ -404,7 +404,7 @@ puts "#{tlaxcala.name} created!"
 
 veracruz = State.create!(name: "Veracruz", address: "alvaro obregon 3 veracruz, mexico", capital: "Xalapa", population: 8.1, life_cost: 10000, weather: "Cálido", contact_number: "228 319 3187")
 
-veracruz_file = URI.open("https://c1.wallpaperflare.com/preview/569/12/969/mexico-veracruz-nature.jpg")
+veracruz_file = URI.open("https://st3.depositphotos.com/13726276/17735/i/450/depositphotos_177352678-stock-photo-atardecer-playa-una-playa-del.jpg")
 veracruz.photo.attach(io: veracruz_file, filename: "ver.png", content_type: "image/png")
 
 veracruz.save!
