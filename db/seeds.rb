@@ -998,27 +998,6 @@ puts "Promos too"
 
 ############################# BAJA CALIFORNIA SUR ##################################
 
-s18 = Store.new(
-  category: "Restaurant",
-  address: "Blvd. Diaz Ordaz 876 baja california, mexico",
-  name: "Planetario Galáctico",
-  description: "El Planetario Galáctico es un viaje a las estrellas sin salir de la ciudad. Con proyecciones 3D, observaciones astronómicas y eventos educativos, este lugar ofrece una experiencia celestial para aficionados y curiosos de todas las edades.",
-  state_id: baja_california.id
-)
-
-s18_file = URI.open("https://www.diariodequeretaro.com.mx/incoming/odghi0-estara-1.jpg/ALTERNATES/LANDSCAPE_768/ESTARA%201.jpg")
-s18.photo.attach(io: s18_file, filename: "s18.png", content_type: "image/png")
-
-s18.save!
-
-puts "#{s18.name} created"
-
-p8_free = Promo.create!(name: "Estudiantes entrada gratis", description: "Todos los días", store_id: s18.id)
-
-promosfree << p8_free
-
-puts "Promos too"
-
 
 ############################# PHOTOS TO PROMOS ################################
 puts "Adding images to promos"
