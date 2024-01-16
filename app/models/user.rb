@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :promos, through: :likes
   has_many :chatrooms, through: :participants
   has_many :chatrooms, through: :messages
+  has_many :reviews
 
   # Image hosting
   has_one_attached :photo
