@@ -13,7 +13,7 @@
     <div class="avt col-4"></div>
   </div>
   <div class="chatroom-container-top"></div>
-  <div class="chatroom-body vh-90 overflow-scroll">
+  <div class="chatroom-body vh-100 overflow-scroll">
       <div class="p-3">
         <div class="promos-conainer">
           <p>Send a promo to <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %>!</p>
