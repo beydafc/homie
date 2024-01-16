@@ -6,6 +6,7 @@ Chatroom.destroy_all
 
 Like.destroy_all
 Promo.destroy_all
+Review.destroy_all
 Store.destroy_all
 User.destroy_all
 State.destroy_all
@@ -956,7 +957,7 @@ s17 = Store.new(
   state_id: baja_california.id
 )
 
-s17_file = URI.open("https://blog.laboticaindiana.es/wp-content/uploads/2017/01/Portada-Bangkok.jpg")
+s17_file = URI.open("https://blog.laboticaindiana.es/wp-content/uploads/2017/01/Vue-Bar-en-el-hotel-Hyatt-on-the-Bund-Shanghai.jpg")
 s17.photo.attach(io: s17_file, filename: "s17.png", content_type: "image/png")
 
 s17.save!
@@ -976,6 +977,29 @@ puts "Promos too"
 
 s18 = Store.new(
   category: "Entertainment",
+  address: "Blvd. Diaz Ordaz 876 baja california, mexico",
+  name: "Planetario Galáctico",
+  description: "El Planetario Galáctico es un viaje a las estrellas sin salir de la ciudad. Con proyecciones 3D, observaciones astronómicas y eventos educativos, este lugar ofrece una experiencia celestial para aficionados y curiosos de todas las edades.",
+  state_id: baja_california.id
+)
+
+s18_file = URI.open("https://www.diariodequeretaro.com.mx/incoming/odghi0-estara-1.jpg/ALTERNATES/LANDSCAPE_768/ESTARA%201.jpg")
+s18.photo.attach(io: s18_file, filename: "s18.png", content_type: "image/png")
+
+s18.save!
+
+puts "#{s18.name} created"
+
+p8_free = Promo.create!(name: "Estudiantes entrada gratis", description: "Todos los días", store_id: s18.id)
+
+promosfree << p8_free
+
+puts "Promos too"
+
+############################# BAJA CALIFORNIA SUR ##################################
+
+s18 = Store.new(
+  category: "Restaurant",
   address: "Blvd. Diaz Ordaz 876 baja california, mexico",
   name: "Planetario Galáctico",
   description: "El Planetario Galáctico es un viaje a las estrellas sin salir de la ciudad. Con proyecciones 3D, observaciones astronómicas y eventos educativos, este lugar ofrece una experiencia celestial para aficionados y curiosos de todas las edades.",
