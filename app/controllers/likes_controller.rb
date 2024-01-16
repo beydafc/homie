@@ -8,4 +8,12 @@ class LikesController < ApplicationController
     @like.destroy
     redirect_to likes_path, status: :see_other
   end
+
+  def update
+    @like = Like.find(params[:id])
+    @like.redeemed = true
+    @like.redeem_code = Faker::Alphanumeric.alphanumeric(number: 10)
+    @like.save
+    redirect_to likes_path
+  end
 end
