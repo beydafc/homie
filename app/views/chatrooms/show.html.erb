@@ -1,48 +1,49 @@
-<div class="container my-5 chatroom-general">
-  <div class="flex-container, mx-5">
-    <%# @chatroom.participants.where.not(user: current_user).each do |userr| %>
-      <%#=  cl_image_tag userr.user.photo.key, class: "avatar", alt: "avatar"  %>
-    <%# end %>
-  </div>
-
-  <div class="flex-container, mx-5">
-    <div class="avatar-chatroom">
-    <%#= @chatroom.participants.where.not(user: current_user)[0].photo.key %>
+<div class="container p-0 my-5 chatroom-general">
+  <h2 class="m-0 pb-2">Homie Chats</h2>
+  <div class="row">
+    <div class="avatars-chatroom col-8 d-flex justify-content-around">
+      <% user_participations = current_user.participants %>
+        <% user_participations.each do |p_user|%>
+          <% chatroom = p_user.chatroom %>
+          <%= link_to chatroom_path(chatroom) do %>
+            <%= cl_image_tag chatroom.users.where.not(id: current_user.id).first.photo.key, class: "avatar-chatroom-top", alt: "avatar" %>
+          <% end  %>
+        <% end %>
     </div>
-    <% @users.each do |userrr| %>
-      <%=  cl_image_tag userrr.photo.key, class: "avatar", alt: "avatar"  %>
-    <% end %>
+    <div class="avt col-4"></div>
   </div>
-
-  <div>
-    <div class="flex-container, my-5">
-      <h2>Messages with <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %></h2>
-
-      <p>Send a promo to <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %>!</p>
-      <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
-        <%= f.input :content,
-                    collection: like_select_options(current_user.likes),
-                    label: false,
-                    wrapper_html: {class: "flex-grow-1"} %>
-        <%= f.submit "Send", class: "btn btn-yellow mb-3" %>
-      <% end %>
-    </div>
-  </div>
-  <div class="container">
-    <div class="container-chatroom" data-controller="chatroom-subscriptions" data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>" data-chatroom-subscriptions-current-user-id-value="<%= current_user.id %>">
-      <div class="messages" data-chatroom-subscriptions-target="messages">
-        <% @chatroom.messages.each do |message| %>
-          <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-            <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-              <%= render "messages/message", message: message %>
+  <div class="chatroom-container-top"></div>
+  <div class="chatroom-body">
+      <div class="container rounded mt-3">
+        <div class="promos-conainer">
+          <p>Send a promo to <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %>!</p>
+          <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
+            <%= f.input :content,
+                        collection: like_select_options(current_user.likes),
+                        label: false,
+                        wrapper_html: {class: "flex-grow-1"} %>
+            <%= f.submit "Send", class: "btn btn-blue mb-3" %>
+          <% end %>
+        </div>
+      </div>
+    <div class="container rounded my-0">
+      <div class="container-chatroom" data-controller="chatroom-subscriptions" data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>" data-chatroom-subscriptions-current-user-id-value="<%= current_user.id %>">
+        <div class="messages" data-chatroom-subscriptions-target="messages">
+          <% @chatroom.messages.each do |message| %>
+            <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+              <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+                <%= render "messages/message", message: message %>
+              </div>
             </div>
-          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="rounded">
+        <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
+          <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.participants.where.not(user: current_user)[0].user.first_name}", wrapper_html: {class: "flex-grow-1"} %>
+        <%= f.submit "Send", class: "btn btn-yellow mb-3" %>
         <% end %>
       </div>
     </div>
-      <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.participants.where.not(user: current_user)[0].user.first_name}", wrapper_html: {class: "flex-grow-1"} %>
-      <%= f.submit "Send", class: "btn btn-warning mb-3" %>
-      <% end %>
   </div>
 </div>
