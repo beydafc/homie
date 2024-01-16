@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :chatrooms, only: %i[show] do
     resources :messages, only: :create
   end
-  resources :likes, only: %i[index destroy]
+
+  resources :likes, only: %i[index destroy update]
 
   devise_for :users
   root to: "pages#home"
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   get "stores_home", to: "stores#stores_home", as: :stores_home
 
   resources :stores, only: %i[index show] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: %i[new create]
   end
 
   post "store/promo/like", to: "stores#like", as: :like_post

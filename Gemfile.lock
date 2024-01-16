@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 50146e0582d8af486d7fbe3c0ab833cdbe6e1eed
+  branch: main
+  specs:
+    faker (3.2.3)
+      i18n (>= 1.8.11, < 2)
+
+GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: 8f77f598b32ed11b0d56c44481607a6e911bcecb
   specs:
@@ -107,6 +115,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    clipboard-rails (1.7.1)
     cloudinary (1.28.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
@@ -155,6 +164,9 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -290,6 +302,9 @@ GEM
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     warden (1.2.9)
@@ -318,15 +333,18 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.2)
   capybara
+  clipboard-rails
   cloudinary
   debug
   devise
   dotenv-rails
   error_highlight (>= 0.4.0)
+  faker!
   font-awesome-sass (~> 6.1)
   geocoder
   importmap-rails
   jbuilder
+  jquery-turbolinks
   pg (~> 1.1)
   pg_search
   puma (>= 5.0)
