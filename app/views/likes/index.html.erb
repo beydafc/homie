@@ -1,23 +1,40 @@
-<div class="d-flex justify-content-end mt-5">
-  <h4 class="promo-title d-flex justify-content-end" style="border-radius: 4px 0px 0px 4px; padding-right: 90px; width: 600px">MY PROMOS</h3>
+<div style="background-size: cover; background-repeat: no-repeat; background-image: url('https://github.com/beydafc/bey_imgs/blob/main/homie_plans&friends_user_index.png?raw=true')">
+  <div class="d-flex justify-content-end pt-5">
+    <h4 class="promo-title d-flex justify-content-end" style="border-radius: 4px 0px 0px 4px; padding-right: 90px; width: 600px">MY PROMOS</h3>
+  </div>
+  <% if @likes.count < 1 %>
+    <div style="height: 280px; width: 200px; margin: 0 auto; margin-top: 50px; ">
+        <p class="text-secondary text-center">You have no promos yet</p>
+        <%= link_to "Stores & Promos", stores_path, class: "btn btn-yellow d-flex d-flex justify-content-center me-0" %>
+    </div>
+  <% else %>
+    <div class="container mt-5 p-3" style="min-height: 285px;">
+      <table class="table align-middle" style="width: 100%; margin: 0 auto;">
+        <tbody>
+          <% @likes.each do |like| %>
+            <tr>
+              <th scope="row" ><%= image_tag like.promo.store.photo, size: "50x50", style: "border-radius: 50%" %></th>
+              <td><%= like.promo.name %></td>
+              <td><%= like.promo.store.name%></td>
+              <td>
+                <% if like.redeemed%>
+                  <div data-controller="clipboard" data-clipboard-success-content-value="copied">
+                    <input type="text" value="<%= like.redeem_code %>" data-clipboard-target="source" disabled/>
+                    <button type="button" data-action="clipboard#copy" data-clipboard-target="button"><i class="fa-regular fa-copy"></i></button>
+                  </div>
+                <% else %>
+                  <%= link_to "Redeem", like_path(like), class: "btn btn-blue", data: {turbo_method: :put}%>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to like_path(like), class: "text-decoration-none text-danger", data: {turbo_method: :delete} do %>
+                  <i class="fa-solid fa-trash-can text-secondary"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+    </div>
+  <% end %>
 </div>
-<div class="container mt-5 p-3 mb-5">
-  <table class="table text-align-center" style="width: 80%; margin: 0 auto;">
-    <tbody>
-      <% @likes.each do |like| %>
-        <tr>
-          <th scope="row"><%= image_tag like.promo.store.photo, size: "50x50", style: "border-radius: 50%" %></th>
-          <td><%= like.promo.name %></td>
-          <td><%= like.promo.store.name%></td>
-          <td><%= link_to "Redeem", like_path(like), data: {turbo_method: :put} unless like.redeemed%> <p><%= like.redeem_code %></p></td>
-          <td>
-            <%= link_to like_path(like), class: "text-decoration-none text-danger", data: {turbo_method: :delete} do %>
-              <i class="fa-solid fa-trash-can text-secondary"></i>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-</table>
-</div>
-<%=  console %>

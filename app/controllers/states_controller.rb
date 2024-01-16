@@ -11,7 +11,8 @@ class StatesController < ApplicationController
     @markers = [
       {
         lat: @state.latitude,
-        lng: @state.longitude
+        lng: @state.longitude,
+        infoWindow: {}
       }
     ]
   end
