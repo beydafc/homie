@@ -1,21 +1,28 @@
-<div class="mt-5">
+<div class="mt-3">
   <div class="container">
-    <h3 class="text-warning">Tap to see a Homie's Profile!</h3>
+    <h2 class="text-warning">Tap to see a Homie's Profile!</h2>
   </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 40px;">
- <% @users.each do |user| %>
- <%= link_to user, class: "text-decoration-none" do %>
-  <div class="col">
-    <div class="card h-100" style="border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-      <%= cl_image_tag user.photo.key %>
-        <div class="card-body">
-            <h5 class="card-title"><%= user.first_name %> <%= user.last_name %></h5>
-          <p class="card-text"><%= user.description %></p>
-        </div>
+<div class="yellow-background" style="background-size: cover; background-repeat: no-repeat; background-image: url('https://github.com/beydafc/bey_imgs/blob/main/homie_plans&friends_user_index.png?raw=true')">
+  <div class="container">
+    <div class="row">
+      <div class="justify-content-center">
+          <% @users.each do |user| %>
+              <div class="card-user">
+                <%= link_to user, class: "text-decoration-none justify-content-center h-100" do %>
+                  <%= cl_image_tag user.photo.key, class: "card-user-img" %>
+                <% end %>
+                <div class="card-user-infos">
+                  <h3><%= user.first_name %></h3>
+                  <p><%= user.description %></p>
+                  <%= button_to participation_path(user_id: user.id), class: "btn btn-blue" do %>
+                    <i>Start a conversation!</i>
+                  <% end %>
+                </div>
+              </div>
+          <% end %>
       </div>
     </div>
- <% end %>
-<% end %>
+  </div>
 </div>

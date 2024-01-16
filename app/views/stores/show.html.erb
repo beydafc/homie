@@ -5,28 +5,38 @@
     </div>
   </div>
 </div>
+
+
 <div class="container mt-5">
   <div class="d-flex align-items-center">
     <div class="text-center col-10 pe-5">
-      <h4 class="mb-4"><%= @store.address %></h4>
+      <h4 class="mb-4"><%= @store.address.upcase %></h4>
       <h6><%= @store.description %></h6>
     </div>
-    <div class="col-2" style="width: 200px; height: 200px; border-radius: 10px;"
+
+    <div class="col-2 shadow" style="width: 200px; height: 200px; border-radius: 10px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+
   </div>
 </div>
 <h4 class="mt-5 ps-4 promo-title">PROMOCIONES</h4>
-<div class="container mt-4">
+<div class="mt-4 mb-5">
   <div class="row d-flex justify-content-center">
     <% @store.promos.each do |promo|%>
       <div class="col-3 m-3">
         <div class="shadow card-promo" style="width: 18rem;">
           <%= image_tag promo.photo, class: "card-img-top" %>
-            <%= button_to like_path(promo_id: promo.id), class: "btn btn-sm shadow btn-like" do %>
-              <i class="fa-solid fa-heart" style="color: red;"></i>
+            <% if Like.find_by(user: current_user, promo: promo)%> <%#Evitar querys en vistas para el futuro%>
+              <%= link_to like_path(Like.find_by(promo: promo).id), class: "btn btn-sm shadow btn-like", data: {turbo_method: :delete} do %>
+                <i class="fa-solid fa-trash-can text-secondary"></i>
+              <% end %>
+            <% else %>
+              <%= button_to like_post_path(promo_id: promo.id), class: "btn btn-sm shadow btn-like" do %>
+                <i class="fa-solid fa-heart text-warning"></i>
+              <% end  %>
             <% end  %>
           <div class="card-body">
             <h5 class="card-title"><%= promo.name %></h5>
@@ -36,4 +46,17 @@
       </div>
     <% end %>
   </div>
+</div>
+
+<div class="point">
+    <div class="container, p-5">
+      <div class="row">
+        <div class="col-xs-4">
+            <%= simple_form_for [@store, @review] do |f| %>
+                <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: { controller: "star-rating", action: "click->form-submit#submit"} }  %>
+                  <%= f.submit%>
+            <% end %>
+        </div>
+      </div>
+    </div>
 </div>
