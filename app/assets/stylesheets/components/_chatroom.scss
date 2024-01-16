@@ -11,7 +11,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-left: 10px;
   }
-  box-shadow: 0 5px 40px rgba(0, 0, 0, .9);
+  box-shadow: 0 5px 32px rgba(0, 0, 0, .9);
 }
 
 .avatars-chatroom {
@@ -35,5 +35,9 @@
 }
 
 .chatroom-body {
+  background-color: #aec7d2;
+}
+
+.send-form {
   background-color: #aec7d2;
 }

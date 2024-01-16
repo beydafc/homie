@@ -13,8 +13,8 @@
     <div class="avt col-4"></div>
   </div>
   <div class="chatroom-container-top"></div>
-  <div class="chatroom-body">
-      <div class="container rounded mt-3">
+  <div class="chatroom-body vh-90 overflow-scroll">
+      <div class="p-3">
         <div class="promos-conainer">
           <p>Send a promo to <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %>!</p>
           <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
@@ -26,7 +26,7 @@
           <% end %>
         </div>
       </div>
-    <div class="container rounded my-0">
+    <div class="my-0 p-3">
       <div class="container-chatroom" data-controller="chatroom-subscriptions" data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>" data-chatroom-subscriptions-current-user-id-value="<%= current_user.id %>">
         <div class="messages" data-chatroom-subscriptions-target="messages">
           <% @chatroom.messages.each do |message| %>
@@ -38,12 +38,12 @@
           <% end %>
         </div>
       </div>
-      <div class="rounded">
+    </div>
+  </div>
+      <div class="send-form p-3">
         <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
           <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.participants.where.not(user: current_user)[0].user.first_name}", wrapper_html: {class: "flex-grow-1"} %>
         <%= f.submit "Send", class: "btn btn-yellow mb-3" %>
         <% end %>
       </div>
-    </div>
-  </div>
 </div>
