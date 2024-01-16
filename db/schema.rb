@@ -139,6 +139,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_16_025306) do
     t.integer "age"
     t.string "university"
     t.bigint "state_id", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["state_id"], name: "index_users_on_state_id"
