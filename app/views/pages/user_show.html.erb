@@ -18,12 +18,24 @@
             <%= button_to participation_path(user_id: @user.id), class: "btn btn-blue-show" do %>
               <i>Start a conversation!</i>
             <% end %>
+            </div>
+          <div  class="button-user" >
+            <%= link_to user_report_path(@user), class: "btn btn-yellow" do %>
+              <i>Report <%=@user.first_name %></i>
+            <% end %>
+
           </div>
+         </div>
         </div>
       </div>
       <div class="container-bottom">
         <p><%= @user.description %></p>
       </div>
     </div>
+
+
+
+
+
   </div>
 </div>
