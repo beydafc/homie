@@ -21,6 +21,9 @@ class PagesController < ApplicationController
   def user_show
     @user = User.find(params[:id])
 
+  def user_report
+    @user = User.find(params[:id])
+  end
 
     @markers = [
       {
@@ -35,4 +38,10 @@ class PagesController < ApplicationController
     @index = 0
     @users = User.paginate
   end
+
+  def mensaje
+   redirect_to users_path, notice: "Report successfully submited"
+  end
+
+
 end
