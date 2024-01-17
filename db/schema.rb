@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_16_025306) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_16_142230) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_16_025306) do
     t.bigint "promo_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "redeemed", default: false
+    t.string "redeem_code"
     t.index ["promo_id"], name: "index_likes_on_promo_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end

@@ -8,14 +8,18 @@
   width: 70%;
   max-width: 400px;
   border-radius: 4px;
-  padding: 8px;
-  min-height: 80px;
+  padding: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  min-height: 30px;
+  font-size: small;
+  box-shadow: 0 5px 15px rgba(82, 82, 82, 0.5);
 }
 
 .sender-style {
-  background-color: #a0e6ff;
+  background-color: #5ca7cc;
 }
 
 .receiver-style {
-  background-color: #ffd56b;
+  background-color: #e7c05e;
 }
