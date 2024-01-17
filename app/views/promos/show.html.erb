@@ -2,19 +2,7 @@
   <div class="container">
     <div>
       <h1 class="shadow"><%= @promo.store.name %></h1>
-    </div>
-  </div>
-</div>
-<div class="container mt-5">
-  <div class="d-flex align-items-center">
-    <div class="text-center col-10 pe-5">
-      <h4 class="mb-4"><%= @promo.store.address.upcase %></h4>
-      <h6><%= @promo.store.description %></h6>
-    </div>
-    <div class="col-2 shadow" style="width: 200px; height: 200px; border-radius: 10px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <%= link_to "Go to Store", store_path(@promo.store), class: "btn btn-blue mt-2" %>
     </div>
   </div>
 </div>
