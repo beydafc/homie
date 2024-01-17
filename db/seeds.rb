@@ -968,8 +968,8 @@ p26_2x1 = Promo.create!(name: "Botellas 2x1", description: "Todos los miércoles
 p27_2x1 = Promo.create!(name: "Coctéles 2x1", description: "Todos los jueves", store_id: s17.id)
 p7_free = Promo.create!(name: "Barra libre damas", description: "Sólo primer sábado de cada mes", store_id: s17.id)
 
-promos2x1 << p13_2x1
-promos2x1 << p14_2x1
+promos2x1 << p26_2x1
+promos2x1 << p27_2x1
 promosfree << p7_free
 
 puts "Promos too"
@@ -998,32 +998,467 @@ puts "Promos too"
 
 ############################# BAJA CALIFORNIA SUR ##################################
 
-s18 = Store.new(
+s19 = Store.new(
   category: "Restaurant",
-  address: "Blvd. Diaz Ordaz 876 baja california, mexico",
-  name: "Planetario Galáctico",
-  description: "El Planetario Galáctico es un viaje a las estrellas sin salir de la ciudad. Con proyecciones 3D, observaciones astronómicas y eventos educativos, este lugar ofrece una experiencia celestial para aficionados y curiosos de todas las edades.",
-  state_id: baja_california.id
+  address: "calle del sol 456 baja california sur, mexico",
+  name: "El Oasis Gastronómico",
+  description: "En El Oasis Gastronómico, los sabores del desierto se encuentran con los del océano. Este restaurante fusiona la cocina tradicional sudcaliforniana con toques contemporáneos, ofreciendo una experiencia culinaria única en un entorno elegante.",
+  state_id: baja_california_sur.id
 )
 
-s18_file = URI.open("https://www.diariodequeretaro.com.mx/incoming/odghi0-estara-1.jpg/ALTERNATES/LANDSCAPE_768/ESTARA%201.jpg")
-s18.photo.attach(io: s18_file, filename: "s18.png", content_type: "image/png")
+s19_file = URI.open("https://cdn.foodandwineespanol.com/2021/08/jazamango-portada-e1654019547839.jpg")
+s19.photo.attach(io: s19_file, filename: "s19.png", content_type: "image/png")
 
-s18.save!
+s19.save!
 
-puts "#{s18.name} created"
+puts "#{s19.name} created"
 
-p8_free = Promo.create!(name: "Estudiantes entrada gratis", description: "Todos los días", store_id: s18.id)
+p28_2x1 = Promo.create!(name: "2x1 en bebidas", description: "Sólo fines de semana", store_id: s19.id)
+p29_2x1 = Promo.create!(name: "2x1 en postres", description: "Todos los jueves", store_id: s19.id)
+p7_50 = Promo.create!(name: "50% de descuento en desayunos", description: "Sólo de lunes a viernes", store_id: s19.id)
 
-promosfree << p8_free
+promos2x1 << p28_2x1
+promos2x1 << p29_2x1
+promos50 << p7_50
 
 puts "Promos too"
 
 
+s20 = Store.new(
+  category: "Entertainment",
+  address: "calle de las estrellas 789 baja california sur, mexico",
+  name: "Club Nocturno Bahía",
+  description: "El Club Nocturno Bahía es el epicentro de la vida nocturna en Cabo San Lucas. Con música vibrante, DJ en vivo y un ambiente festivo, este establecimiento es el destino ideal para quienes buscan experiencias nocturnas inolvidables.",
+  state_id: baja_california_sur.id
+)
+
+s20_file = URI.open("https://www.palmitosresidencial.com/img/b_2_2.jpg")
+s20.photo.attach(io: s20_file, filename: "s20.png", content_type: "image/png")
+
+s20.save!
+
+puts "#{s20.name} created"
+
+p30_2x1 = Promo.create!(name: "Botellas 2x1", description: "Todos los miércoles", store_id: s20.id)
+p31_2x1 = Promo.create!(name: "Coctéles 2x1", description: "Todos los jueves", store_id: s20.id)
+p9_free = Promo.create!(name: "Barra libre damas", description: "Sólo primer sábado de cada mes", store_id: s20.id)
+
+promos2x1 << p30_2x1
+promos2x1 << p31_2x1
+promosfree << p9_free
+
+puts "Promos too"
+
+################# CAMPECHE #########################
+
+s21 = Store.new(
+  category: "Beauty",
+  address: "blvd del mar 789 campeche, mexico",
+  name: "Serenidad Estética Marina",
+  description: "Serenidad Estética Marina combina la tranquilidad del mar con servicios de belleza de alta calidad. Ofrecemos desde tratamientos faciales rejuvenecedores hasta masajes terapéuticos. Ven y sumérgete en una experiencia de bienestar total.",
+  state_id: campeche.id
+)
+
+s21_file = URI.open("https://imgs1.cdn-imobibrasil.com.br/imagens/imoveis/2022082919532170551.jpg")
+s21.photo.attach(io: s21_file, filename: "s21.png", content_type: "image/png")
+
+s21.save!
+
+puts "#{s21.name} created"
+
+p32_2x1 = Promo.create!(name: "2x1 amigas", description: "Sólo jueves", store_id: s21.id)
+p33_2x1 = Promo.create!(name: "2x1 novios", description: "Sólo fines de semana", store_id: s21.id)
+
+promos2x1 << p32_2x1
+promos2x1 << p33_2x1
+
+puts "Promos too"
+
+
+s22 = Store.new(
+  category: "Entertainment",
+  address: "calle de la cultura 123 campeche, mexico",
+  name: "Centro Cultural Arte y Ritmo",
+  description: "El Centro Cultural Arte y Ritmo es un espacio vibrante donde convergen la música, el arte y la danza. Ofrecemos eventos culturales, conciertos en vivo y clases de baile para toda la comunidad. Sumérgete en la expresión creativa en nuestro ambiente acogedor.",
+  state_id: campeche.id
+)
+
+s22_file = URI.open("https://porelmundomaya.com/wp-content/uploads/2023/03/50676673742_48cb633fdf_o-845x321.jpg")
+s22.photo.attach(io: s22_file, filename: "s22.png", content_type: "image/png")
+
+s22.save!
+
+puts "#{s22.name} created"
+
+p34_2x1 = Promo.create!(name: "Estudantes 2x1", description: "Todos los miércoles", store_id: s22.id)
+p35_2x1 = Promo.create!(name: "Maestros 2x1", description: "Todos los jueves", store_id: s22.id)
+p36_2x1 = Promo.create!(name: "Viernes universitario", description: "Todos los viernes de 3:00pm a 5:00pm", store_id: s22.id)
+
+promos2x1 << p34_2x1
+promos2x1 << p35_2x1
+promos2x1 << p36_2x1
+
+puts "Promos too"
+
+########################### CHIAPAPS #########################
+
+s23 = Store.new(
+  category: "Restaurant",
+  address: "blvd belisario dominguez 171 chiapas, mexico",
+  name: "Café Selva Mágica",
+  description: "Café Selva Mágica es más que un café; es una experiencia sensorial rodeada de naturaleza, donde puedes disfrutar de exquisitos cafés chiapanecos y delicias regionales en un ambiente tranquilo y acogedor.",
+  state_id: chiapas.id
+)
+
+s23_file = URI.open("https://s9790.pcdn.co/wp-content/uploads/2016/11/Expendio-MCB.jpg")
+s23.photo.attach(io: s23_file, filename: "s23.png", content_type: "image/png")
+
+s23.save!
+
+puts "#{s23.name} created"
+
+p37_2x1 = Promo.create!(name: "2x1 en bebidas", description: "Sólo fines de semana", store_id: s23.id)
+p38_2x1 = Promo.create!(name: "2x1 en postres", description: "Todos los jueves", store_id: s23.id)
+p8_50 = Promo.create!(name: "50% de descuento en desayunos", description: "Sólo de lunes a viernes", store_id: s23.id)
+
+promos2x1 << p37_2x1
+promos2x1 << p38_2x1
+promos50 << p8_50
+
+puts "Promos too"
+
+
+s24 = Store.new(
+  category: "Entertainment",
+  address: "av central oriente 179 chiapas, mexico",
+  name: "Centro de Tradiciones Mayas",
+  description: "El Centro de Tradiciones Mayas es un espacio dedicado a la preservación y promoción de la rica herencia de la civilización maya en Chiapas. Este centro cultural ofrece exposiciones detalladas, talleres artesanales y representaciones artísticas que exploran la profundidad de las tradiciones mayas.",
+  state_id: chiapas.id
+)
+
+s24_file = URI.open("https://programadestinosmexico.com/museos/tuxtla-gutierrez/CENTRO%20CULTURAL%20JAIME%20SABINES1.jpg")
+s24.photo.attach(io: s24_file, filename: "s24.png", content_type: "image/png")
+
+s24.save!
+
+puts "#{s24.name} created"
+
+p39_2x1 = Promo.create!(name: "Estudantes 2x1", description: "Todos los miércoles", store_id: s24.id)
+p40_2x1 = Promo.create!(name: "Maestros 2x1", description: "Todos los jueves", store_id: s24.id)
+p41_2x1 = Promo.create!(name: "Viernes universitario", description: "Todos los viernes de 3:00pm a 5:00pm", store_id: s24.id)
+
+promos2x1 << p39_2x1
+promos2x1 << p40_2x1
+promos2x1 << p41_2x1
+
+puts "Promos too"
+
+############################# CHIHUAHUA ######################
+
+s25 = Store.new(
+  category: "Restaurant",
+  address: "av niños heroes 300 chihuahua, mexico",
+  name: "Rinconcito del Sabor Norteño",
+  description: "Rinconcito del Sabor Norteño es una joya culinaria que celebra la auténtica cocina norteña de Chihuahua. En este acogedor restaurante, cada platillo cuenta una historia de tradición y sabor, destacando la influencia de la región en cada bocado. La decoración rústica y la hospitalidad genuina crean un ambiente cálido donde los comensales pueden disfrutar de deliciosas especialidades norteñas, desde asados jugosos hasta platillos tradicionales con un toque moderno.",
+  state_id: chihuahua.id
+)
+
+s25_file = URI.open("https://nortedigital.mx/wp-content/uploads/2020/06/restaurante-cd-juarez.jpg")
+s25.photo.attach(io: s25_file, filename: "s25.png", content_type: "image/png")
+
+s25.save!
+
+puts "#{s25.name} created"
+
+p42_2x1 = Promo.create!(name: "2x1 en bebidas", description: "Sólo fines de semana", store_id: s25.id)
+p43_2x1 = Promo.create!(name: "2x1 en postres", description: "Todos los jueves", store_id: s25.id)
+p9_50 = Promo.create!(name: "50% de descuento en desayunos", description: "Sólo de lunes a viernes", store_id: s25.id)
+
+promos2x1 << p42_2x1
+promos2x1 << p43_2x1
+promos50 << p9_50
+
+puts "Promos too"
+
+
+s26 = Store.new(
+  category: "Beauty",
+  address: "francisco briones 431 chihuahua, mexico",
+  name: "Estilo Vanguardia Peluquería",
+  description: "En Estilo Vanguardia Peluquería, la moda se encuentra con la innovación. Nuestro equipo de estilistas expertos se esfuerza por ofrecer cortes de cabello vanguardistas, coloraciones de última moda y tratamientos capilares personalizados. Con un ambiente moderno y servicios de alta calidad, nos enorgullece ser el destino preferido para aquellos que buscan una transformación de estilo excepcional.",
+  state_id: chihuahua.id
+)
+
+s26_file = URI.open("https://www.hola.com/imagenes/viajes/2013021563363/spas-mundo-relax/0-228-461/a_bushmans47-a.jpg")
+s26.photo.attach(io: s26_file, filename: "s26.png", content_type: "image/png")
+
+s26.save!
+
+puts "#{s26.name} created"
+
+p44_2x1 = Promo.create!(name: "2x1 amigas", description: "Sólo jueves", store_id: s26.id)
+p45_2x1 = Promo.create!(name: "2x1 novios", description: "Sólo fines de semana", store_id: s26.id)
+
+promos2x1 << p44_2x1
+promos2x1 << p45_2x1
+
+puts "Promos too"
+
+################################### CDMX ########################
+
+s27 = Store.new(
+  category: "Restaurant",
+  address: "av paseo de la reforma 439 ciudad de mexico, mexico",
+  name: "Fusión Contemporánea Reforma",
+  description: "Fusión Contemporánea Reforma redefine la experiencia culinaria en el corazón financiero de la CDMX. Este restaurante combina ingredientes de primera calidad con técnicas de vanguardia, creando una propuesta gastronómica innovadora y sofisticada. Desde platos exquisitos hasta cócteles artesanales, cada aspecto de Fusión Contemporánea Reforma está diseñado para deleitar los sentidos.",
+  state_id: cdmx.id
+)
+
+s27_file = URI.open("https://thehappening.com/wp-content/uploads/2019/12/terraza-chacha.jpg")
+s27.photo.attach(io: s27_file, filename: "s27.png", content_type: "image/png")
+
+s27.save!
+
+puts "#{s27.name} created"
+
+p46_2x1 = Promo.create!(name: "2x1 en bebidas", description: "Sólo fines de semana", store_id: s27.id)
+p47_2x1 = Promo.create!(name: "2x1 en postres", description: "Todos los jueves", store_id: s27.id)
+p10_50 = Promo.create!(name: "50% de descuento en desayunos", description: "Sólo de lunes a viernes", store_id: s27.id)
+
+promos2x1 << p46_2x1
+promos2x1 << p47_2x1
+promos50 << p10_50
+
+puts "Promos too"
+
+
+s28 = Store.new(
+  category: "Beauty",
+  address: "quintana roo 126 ciudad de mexico, mexico",
+  name: "Trendy Look Salón",
+  description: "Trendy Look Salón es más que un salón de belleza; es un espacio donde la moda y la innovación se encuentran. Nuestro equipo de estilistas expertos está comprometido con proporcionar cortes de cabello modernos, coloraciones a la moda y tratamientos capilares de alta calidad. En un ambiente chic y contemporáneo, Trendy Look Salón ofrece una experiencia de belleza única que refleja las últimas tendencias y resalta la individualidad de cada cliente.",
+  state_id: cdmx.id
+)
+
+s28_file = URI.open("https://mxcity.mx/wp-content/uploads/2015/07/papri-620x336.jpg")
+s28.photo.attach(io: s28_file, filename: "s28.png", content_type: "image/png")
+
+s28.save!
+
+puts "#{s28.name} created"
+
+p48_2x1 = Promo.create!(name: "2x1 amigas", description: "Sólo jueves", store_id: s28.id)
+p49_2x1 = Promo.create!(name: "Corte gratis", description: "En la compra de $1,000 pde producto. Sólo fines de semana", store_id: s28.id)
+
+promos2x1 << p48_2x1
+promos2x1 << p49_2x1
+
+puts "Promos too"
+
+
+s29 = Store.new(
+  category: "Entertainment",
+  address: "av alvaro obregon 287 ciudad de mexico, mexico",
+  name: "Eclipsia Lounge",
+  description: "Eclipsia Lounge es un oasis sofisticado en el panorama nocturno de Coyoacán. Este club nocturno se distingue por su ambiente elegante, cócteles de autor y música seleccionada cuidadosamente. Con áreas lounge íntimas y una decoración chic, Eclipsia Lounge es el lugar perfecto para aquellos que buscan una experiencia nocturna más relajada, donde la conversación fluye tan libremente como las bebidas.",
+  state_id: cdmx.id
+)
+
+s29_file = URI.open("https://thetravelbible.com/wp-content/uploads/2022/03/best-mexico-city-nightlife-ato-1024x684.jpg")
+s29.photo.attach(io: s29_file, filename: "s29.png", content_type: "image/png")
+
+s29.save!
+
+puts "#{s29.name} created"
+
+p50_2x1 = Promo.create!(name: "Botellas 2x1", description: "Todos los miércoles", store_id: s29.id)
+p51_2x1 = Promo.create!(name: "Coctéles 2x1", description: "Todos los jueves", store_id: s29.id)
+p10_free = Promo.create!(name: "Barra libre damas", description: "Sólo primer sábado de cada mes", store_id: s29.id)
+
+promos2x1 << p50_2x1
+promos2x1 << p51_2x1
+promosfree << p10_free
+
+puts "Promos too"
+
+########################### COAHUILA #########################
+
+s30 = Store.new(
+  category: "Restaurant",
+  address: "coah 112 coahuila, mexico",
+  name: "Sabores del Desierto",
+  description: "Sabores del Desierto es un rincón gastronómico que rinde homenaje a la riqueza culinaria de Coahuila. En este restaurante, cada plato es una exploración de los sabores auténticos de la región, desde asados jugosos hasta delicias tradicionales con un toque contemporáneo. Con su decoración inspirada en el desierto y una atención excepcional, Sabores del Desierto es el destino perfecto para quienes buscan una experiencia culinaria única en el corazón de Saltillo.",
+  state_id: coahuila.id
+)
+
+s30_file = URI.open("https://viveloensaltillo.com/wp-content/uploads/2021/01/1254x851rsc1900-1024x695.png")
+s30.photo.attach(io: s30_file, filename: "s30.png", content_type: "image/png")
+
+s30.save!
+
+puts "#{s30.name} created"
+
+p52_2x1 = Promo.create!(name: "2x1 en bebidas", description: "Sólo fines de semana", store_id: s30.id)
+p53_2x1 = Promo.create!(name: "2x1 en postres", description: "Todos los jueves", store_id: s30.id)
+p11_50 = Promo.create!(name: "50% de descuento en desayunos", description: "Sólo de lunes a viernes", store_id: s30.id)
+
+promos2x1 << p52_2x1
+promos2x1 << p53_2x1
+promos50 << p11_50
+
+puts "Promos too"
+
+s31 = Store.new(
+  category: "Beauty",
+  address: "isabel amalia 1508 coahuila, mexico",
+  name: "Revitaliza Spa Urbano",
+  description: "Revitaliza Spa Urbano es un oasis de relajación en pleno corazón de Monclova. Este spa urbano ofrece una gama completa de servicios, desde masajes terapéuticos hasta tratamientos faciales rejuvenecedores. Con su diseño moderno y enfoque en la renovación interior, Revitaliza Spa Urbano es el lugar ideal para aquellos que buscan una pausa revitalizante en su rutina diaria. El ambiente acogedor y el compromiso con la excelencia en el servicio hacen de este spa una opción destacada para el bienestar en Coahuila.",
+  state_id: coahuila.id
+)
+
+s31_file = URI.open("https://descubreenmexico.com/wp-content/uploads/2023/01/20220527_135517-scaled.jpg")
+s31.photo.attach(io: s31_file, filename: "s31.png", content_type: "image/png")
+
+s31.save!
+
+puts "#{s31.name} created"
+
+p54_2x1 = Promo.create!(name: "2x1 novios", description: "Sólo fines de semana", store_id: s31.id)
+
+promos2x1 << p54_2x1
+
+puts "Promos too"
+
+###################### COLIMA #######################
+
+s32 = Store.new(
+  category: "Restaurant",
+  address: "gabino barreda 34 colima, mexico",
+  name: "Delicias Costeñas",
+  description: "Delicias Costeñas es una joya gastronómica que captura la esencia de la costa colimense. Este restaurante celebra la frescura del mar con una amplia variedad de platillos marinos, desde ceviches vibrantes hasta pescados a la talla llenos de sabor. Con una decoración que refleja la vitalidad del océano y un ambiente acogedor, Delicias Costeñas es el lugar perfecto para aquellos que buscan deleitarse con auténticos sabores costeros en el corazón de Colima.",
+  state_id: colima.id
+)
+
+s32_file = URI.open("https://resizer.otstatic.com/v2/photos/wide-huge/1/25281348.jpg")
+s32.photo.attach(io: s32_file, filename: "s32.png", content_type: "image/png")
+
+s32.save!
+
+puts "#{s32.name} created"
+
+p55_2x1 = Promo.create!(name: "2x1 en bebidas", description: "Sólo fines de semana", store_id: s32.id)
+p56_2x1 = Promo.create!(name: "2x1 en postres", description: "Todos los jueves", store_id: s32.id)
+p12_50 = Promo.create!(name: "50% de descuento en desayunos", description: "Sólo de lunes a viernes", store_id: s32.id)
+
+promos2x1 << p55_2x1
+promos2x1 << p56_2x1
+promos50 << p12_50
+
+puts "Promos too"
+
+s33 = Store.new(
+  category: "Beauty",
+  address: "emilio rabasa 323 colima, mexico",
+  name: "Tranquilidad Volcánica Spa",
+  description: "Tranquilidad Volcánica Spa es un escape único que combina la serenidad con la inspiración de los paisajes volcánicos. Este spa ofrece tratamientos indulgentes que van desde envolturas corporales hasta masajes con piedras calientes, todo diseñado para sumergir a los visitantes en una experiencia de relajación total. Con vistas panorámicas y una decoración que refleja la belleza natural de la región, Tranquilidad Volcánica Spa es un remanso de paz en medio de la vibrante vida cotidiana.",
+  state_id: colima.id
+)
+
+s33_file = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/1a/b9/39/adults-pool--v8460143.jpg")
+s33.photo.attach(io: s33_file, filename: "s33.png", content_type: "image/png")
+
+s33.save!
+
+puts "#{s33.name} created"
+
+p57_2x1 = Promo.create!(name: "2x1 novios", description: "Sólo fines de semana", store_id: s33.id)
+
+promos2x1 << p57_2x1
+
+puts "Promos too"
+
+###################### DURANGO ########################
+
+s34 = Store.new(
+  category: "Restaurant",
+  address: "hidalgo 411 durango, mexico",
+  name: "Rincón del Mezquite Grill",
+  description: "Rincón del Mezquite Grill es un paraíso para los amantes de las parrillas en Gómez Palacio. Con una especialización en carnes asadas a la perfección con auténtico sabor a mezquite, este restaurante ofrece una experiencia gastronómica única. Desde jugosas costillas hasta suculentos cortes de res, cada bocado en Rincón del Mezquite Grill es un deleite para los sentidos. El ambiente cálido y la atención excepcional hacen de este establecimiento un lugar destacado para disfrutar de auténticas parrilladas en Durango.",
+  state_id: durango.id
+)
+
+s34_file = URI.open("https://www.durango.com/wp-content/uploads/2017/11/restaurants-fb.jpg")
+s34.photo.attach(io: s34_file, filename: "s34.png", content_type: "image/png")
+
+s34.save!
+
+puts "#{s34.name} created"
+
+p58_2x1 = Promo.create!(name: "2x1 en bebidas", description: "Sólo fines de semana", store_id: s34.id)
+p59_2x1 = Promo.create!(name: "2x1 en postres", description: "Todos los jueves", store_id: s34.id)
+p13_50 = Promo.create!(name: "50% de descuento en desayunos", description: "Sólo de lunes a viernes", store_id: s34.id)
+
+promos2x1 << p58_2x1
+promos2x1 << p59_2x1
+promos50 << p13_50
+
+puts "Promos too"
+
+##################### EDOMEX ##########################
+
+s35 = Store.new(
+  category: "Restaurant",
+  address: "francisco murguia 16 estado de mexico, mexico",
+  name: "Delicias del Bosque Restaurante",
+  description: "Delicias del Bosque Restaurante es un refugio gastronómico ubicado en medio de la exuberante naturaleza de Toluca. Con un menú que resalta los sabores locales y la frescura de los ingredientes provenientes de los alrededores, este restaurante ofrece una experiencia culinaria inmersa en el entorno boscoso. Desde platillos gourmet hasta opciones para el desayuno, Delicias del Bosque es el destino perfecto para quienes buscan deleitarse con la deliciosa fusión entre la cocina y la naturaleza.",
+  state_id: edomex.id
+)
+
+s35_file = URI.open("https://foodandpleasure.com/wp-content/uploads/2021/07/apapacho-toluca-restaurantes.jpeg")
+s35.photo.attach(io: s35_file, filename: "s35.png", content_type: "image/png")
+
+s35.save!
+
+puts "#{s35.name} created"
+
+p60_2x1 = Promo.create!(name: "2x1 en bebidas", description: "Sólo fines de semana", store_id: s35.id)
+p61_2x1 = Promo.create!(name: "2x1 en postres", description: "Todos los jueves", store_id: s35.id)
+p14_50 = Promo.create!(name: "50% de descuento en desayunos", description: "Sólo de lunes a viernes", store_id: s35.id)
+
+promos2x1 << p60_2x1
+promos2x1 << p61_2x1
+promos50 << p14_50
+
+puts "Promos too"
+
+
+s36 = Store.new(
+  category: "Beauty",
+  address: "nicolas bravo sur 104 estado de mexico, mexico",
+  name: "Buke Spa",
+  description: "Buke Spa Urbano ofrece una experiencia única de relajación en el pintoresco Valle de Bravo. Con tratamientos que van desde masajes aromáticos hasta tratamientos de belleza personalizados, nuestro spa está diseñado para brindar una pausa rejuvenecedora. ",
+  state_id: edomex.id
+)
+
+s36_file = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/05/ec/b7/36/jardines.jpg")
+s36.photo.attach(io: s36_file, filename: "s36.png", content_type: "image/png")
+
+s36.save!
+
+puts "#{s36.name} created"
+
+p62_2x1 = Promo.create!(name: "2x1 amigas", description: "Sólo jueves", store_id: s36.id)
+p64_2x1 = Promo.create!(name: "2x1 novios", description: "Primer fin de semana de cada mes", store_id: s36.id)
+
+promos2x1 << p62_2x1
+promos2x1 << p64_2x1
+
+puts "Promos too"
+
 ############################# PHOTOS TO PROMOS ################################
 puts "Adding images to promos"
 promos2x1.each do |promo|
-  offer_2x1_photo = URI.open("https://www.promocionplv.com/wp-content/uploads/2016/10/2x1-en-cubiertas.jpg")
+  offer_2x1_photo = URI.open("https://img.freepik.com/vector-premium/2x1-etiqueta-comercial-roja-mitad-precio-aislada_123447-1009.jpg")
   promo.photo.attach(io: offer_2x1_photo, filename: "promo2x1.png", content_type: "image/png")
   promo.save!
 end
