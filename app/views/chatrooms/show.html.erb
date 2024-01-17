@@ -13,19 +13,20 @@
     <div class="avt col-4"></div>
   </div>
   <div class="chatroom-container-top"></div>
-  <div class="chatroom-body vh-100 overflow-scroll">
-      <div class="p-3">
-        <div class="promos-conainer">
+      <div class="p-container p-3">
+        <div class="promos-container">
           <p>Send a promo to <%= @chatroom.participants.where.not(user: current_user)[0].user.first_name %>!</p>
           <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
             <%= f.input :content,
                         collection: like_select_options(current_user.likes),
                         label: false,
                         wrapper_html: {class: "flex-grow-1"} %>
-            <%= f.submit "Send", class: "btn btn-blue mb-3" %>
+            <%= f.submit "Send", class: "btn btn-blue mb-3", style: "rounded" %>
           <% end %>
         </div>
       </div>
+  <div class="chatroom-body vh-100 overflow-scroll">
+      <hr>
     <div class="my-0 p-3">
       <div class="container-chatroom" data-controller="chatroom-subscriptions" data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>" data-chatroom-subscriptions-current-user-id-value="<%= current_user.id %>">
         <div class="messages" data-chatroom-subscriptions-target="messages">
