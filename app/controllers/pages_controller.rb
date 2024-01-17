@@ -21,6 +21,7 @@ class PagesController < ApplicationController
   def user_show
     @user = User.find(params[:id])
 
+
     @markers = [
       {
         lat: @user.latitude,
@@ -28,5 +29,10 @@ class PagesController < ApplicationController
         infoWindow: {}
       }
     ]
+  end
+
+  def users
+    @index = 0
+    @users = User.paginate
   end
 end
