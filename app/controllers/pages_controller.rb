@@ -6,7 +6,16 @@ class PagesController < ApplicationController
   end
 
   def user_index
-    @users = User.where.not(id: current_user.id)
+    if params[:query].present?
+      @users = User.global_search(params[:query])
+    else
+      @users = User.where.not(id: current_user.id)
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "pages/list", locals: {users: @users}, formats: [:html] }
+    end
   end
 
   def user_show

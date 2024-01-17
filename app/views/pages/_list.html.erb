@@ -1,0 +1,20 @@
+<div class="container" data-search-users-target="list">
+  <div class="row">
+    <div class="justify-content-center">
+        <% @users.each do |user| %>
+            <div class="card-user">
+              <%= link_to user, class: "text-decoration-none justify-content-center h-100" do %>
+                <%= cl_image_tag user.photo.key, class: "card-user-img" %>
+              <% end %>
+              <div class="card-user-infos">
+                <h3><%= user.first_name %></h3>
+                <p><%= user.description %></p>
+                <%= button_to participation_path(user_id: user.id), class: "btn btn-blue" do %>
+                  <i>Start a conversation!</i>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>
