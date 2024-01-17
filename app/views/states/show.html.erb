@@ -5,6 +5,9 @@
         <div class="container,d-flex, mx-5, px-5" >
           <%= render "states/dropdown"%>
         </div>
+        <div class="container,d-flex, mx-5 my-3">
+          <%= link_to "#{@state.name} stores", stores_path(query: @state.name), class: "btn btn-blue" %>
+        </div>
       </div>
     </div>
   </div>
