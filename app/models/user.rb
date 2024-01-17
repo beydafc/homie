@@ -27,4 +27,9 @@ class User < ApplicationRecord
   def state_location
     self.state.address
   end
+
+
+
+
+
 end
