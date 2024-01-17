@@ -4,11 +4,12 @@
       <h2 class="text-warning">Tap to see a Homie's Profile!</h2>
     </div>
   </div>
-        <div>
+        <div class="form-group has-search mt-3 w-50 mx-auto">
           <%= form_with url: users_path, method: :get,
           html: {data: {search_users_target: "form"}} do %>
+          <span class="fa-solid fa-magnifying-glass lupa"></span>
           <%= text_field_tag :query, nil, class: "form-control",
-          placeholder:"Look for homies byname, university, state, interests..",
+          placeholder:"Look for homies by name, university, state, interests..",
           value: params[:query],
           data: {
             search_users_target: "input",
@@ -17,7 +18,7 @@
           <% end %>
         </div>
 
-  <div class="yellow-background" style="background-size: cover; background-repeat: no-repeat; background-image: url('https://github.com/beydafc/bey_imgs/blob/main/homie_plans&friends_user_index.png?raw=true')">
+  <div class="yellow-background" style="min-height: 500px; background-size: cover; background-repeat: no-repeat; background-image: url('https://github.com/beydafc/bey_imgs/blob/main/homie_plans&friends_user_index.png?raw=true')">
   <%# Lista de users%>
     <%= render "pages/list", users: @users %>
   <%# fin lista users%>
