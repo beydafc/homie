@@ -9,11 +9,11 @@
     </div>
   <% else %>
     <div class="container mt-5 p-3" style="min-height: 285px;">
-      <table class="table align-middle" style="width: 100%; margin: 0 auto;">
+      <table class="align-middle px-2" style="width: 100%; margin: 0 auto;" id="table-like">
         <tbody>
           <% @likes.each do |like| %>
             <tr>
-              <th scope="row" ><%= image_tag like.promo.store.photo, size: "50x50", style: "border-radius: 50%" %></th>
+              <td scope="row" ><%= image_tag like.promo.store.photo, size: "50x50", style: "border-radius: 50%; margin: 10px;"%></td>
               <td><%= like.promo.name %></td>
               <td><%= like.promo.store.name%></td>
               <td>
@@ -23,11 +23,11 @@
                     <button type="button" data-action="clipboard#copy" data-clipboard-target="button"><i class="fa-regular fa-copy"></i></button>
                   </div>
                 <% else %>
-                  <%= link_to "Redeem", like_path(like), class: "btn btn-blue", data: {turbo_method: :put}%>
+                  <%= link_to "Redeem", like_path(like), class: "btn btn-blue d-flex justify-content-center", data: {turbo_method: :put}%>
                 <% end %>
               </td>
               <td>
-                <%= link_to like_path(like), class: "text-decoration-none text-danger", data: {turbo_method: :delete} do %>
+                <%= link_to like_path(like), class: "text-decoration-none text-danger pe-2", data: {turbo_method: :delete} do %>
                   <i class="fa-solid fa-trash-can text-secondary"></i>
                 <% end %>
               </td>
