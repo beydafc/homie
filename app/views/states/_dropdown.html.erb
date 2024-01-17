@@ -3,8 +3,10 @@
     <span style="color: white">Select state</span>
   </button>
   <ul class="dropdown-menu">
-    <% @states.each do |state|  %>
-      <li><%= link_to "#{state.name}", state_path(state), class: "dropdown-item" %></li>
-    <% end %>
+    <div class="scrolleable">
+      <% @states.each do |state|  %>
+        <li><%= link_to "#{state.name}", state_path(state), class: "dropdown-item" %></li>
+      <% end %>
+    </div>
   </ul>
 </div>

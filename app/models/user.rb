@@ -19,17 +19,22 @@ class User < ApplicationRecord
   # Geocoder
   geocoded_by :state_location
   after_validation :geocode
+  def state_location
+    self.state.address
+  end
 
   # Validations
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  def state_location
-    self.state.address
-  end
-
-
-
-
-
+  # PG Search
+  include PgSearch::Model
+  pg_search_scope :global_search,
+  against: [ :first_name, :last_name, :description, :university ],
+  associated_against: {
+    state: [ :name, :capital ]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
 end

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get "users", to: "pages#user_index", as: "users"
   get "users/:id", to: "pages#user_show", as: "user"
+  get "users/:id/report", to: "pages#user_report", as: :user_report
 
   post "participants", to: "participants#create", as: :participation
   post "participants/chatroom", to: "participants#chatroom", as: :new_chatroom
@@ -27,4 +28,7 @@ Rails.application.routes.draw do
   resources :states, only: %i[index show]
 
   resources :promos, only: %i[show]
+
+  get "mensaje", to: "pages#mensaje", as: "mensaje"
+
 end

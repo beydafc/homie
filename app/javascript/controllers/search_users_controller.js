@@ -1,8 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="search-stores"
+// Connects to data-controller="search-users"
 export default class extends Controller {
   static targets = ["form", "input", "list"]
+
   connect() {
   }
 
