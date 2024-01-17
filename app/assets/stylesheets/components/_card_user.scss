@@ -1,6 +1,6 @@
 .card-user {
   overflow: hidden;
-  height: 165px;
+  height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -26,11 +26,12 @@
 }
 
 .card-user p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  padding-bottom: 10px;
 }
 
 .card-user .card-user-infos {
@@ -40,4 +41,9 @@
 .container-user-cards {
   width: 400px;
   justify-content: center;
+}
+
+.card-user:hover {
+  box-shadow: 6px 6px #00527b;
+  transition: .5s;
 }
