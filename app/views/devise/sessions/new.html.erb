@@ -1,22 +1,24 @@
-<div class="container">
-  <h2>Log in</h2>
+<div class="yellow-background py-3" style="min-height: 500px; background-size: cover; background-repeat: no-repeat; background-image: url('https://github.com/beydafc/bey_imgs/blob/main/homie_plans&friends_user_index.png?raw=true')">
+  <div class="container my-4 pb-3" style="background-color: rgba(0, 0, 0, 0.05); border-radius: 10px;">
+    <h2>Log in</h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </div>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Log in", class: "btn btn-yellow" %>
-      </div>
-    <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class: "btn btn-yellow" %>
+        </div>
+      <% end %>
 
-    <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
+  </div>
 </div>
