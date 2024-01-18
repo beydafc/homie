@@ -3,12 +3,12 @@
     <h4 class="promo-title d-flex justify-content-end" style="border-radius: 4px 0px 0px 4px; padding-right: 90px; width: 600px">MY PROMOS</h3>
   </div>
   <% if @likes.count < 1 %>
-    <div style="height: 280px; width: 200px; margin: 0 auto; margin-top: 50px; ">
+    <div style="height: 280px; width: 200px; margin: 0 auto; margin-top: 50px;">
         <p class="text-secondary text-center">You have no promos yet</p>
         <%= link_to "Stores & Promos", stores_path, class: "btn btn-yellow d-flex d-flex justify-content-center me-0" %>
     </div>
   <% else %>
-    <div class="container mt-5 p-3" style="min-height: 285px;">
+    <div class="container mt-5 p-3" style="min-height: 500px;">
       <table class="align-middle px-2" style="width: 100%; margin: 0 auto;" id="table-like">
         <tbody>
           <% @likes.each do |like| %>
