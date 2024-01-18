@@ -7,6 +7,7 @@ class StatesController < ApplicationController
   def show
     @states = State.all
     @state = State.find(params[:id])
+    @users = User.where(state_id: @state.id)
 
     @markers = [
       {

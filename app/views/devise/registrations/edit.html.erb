@@ -18,11 +18,19 @@
           <%= f.input :password_confirmation,
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo, as: :file %>
+          <%= f.input :age,
+                      required: false %>
+          <%= f.input :description,
+                      required: false %>
+          <%= f.input :university,
+                      required: false %>
+          <%= f.association :state, collection: State.all,
+                            required: false %>
           <%= f.input :current_password,
                       hint: "we need your current password to confirm your changes",
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
-            <%= f.input :photo, as: :file %>
             <!--   agregar cambio de foto-->
         </div>
 
