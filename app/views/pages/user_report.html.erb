@@ -1,34 +1,31 @@
+<div class="yellow-background py-3" style="min-height: 500px; background-size: cover; background-repeat: no-repeat; background-image: url('https://github.com/beydafc/bey_imgs/blob/main/homie_plans&friends_user_index.png?raw=true')">
+  <div class="container mb-5 pb-5" style=" background-color: rgba(0, 0, 0, 0.1); border-radius: 10px;width: 350px; text-align: center;">
+    <h2>Report User </h2>
+      <div style="text-align: left;">
+        <p>Why are you reporting?</p>
+          <form action="get">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> Spam</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> Inappropiate Behaviour</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> Others, please specify below</label><br><br>
+      </div>
+        <textarea name="message" rows="7" cols="30" style="color: grey;">
+        </textarea>
+          <br>
+      <!--     <input id="submit-report" type="submit" value="Send" class="btn btn-yellow mt-2" >-->
+            <%= link_to "Send", mensaje_path, class: "btn btn-yellow" %>
 
-<div class="container mb-5 pb-5" style=" background-color: white; border-radius: 10px;width: 350px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;">
-  <h2>Report User </h2>
-    <div style="text-align: left;">
-      <p>Why are you reporting?</p>
-        <form action="get">
-          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-          <label for="vehicle1"> Spam</label><br>
-          <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-          <label for="vehicle2"> Inappropiate Behaviour</label><br>
-          <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-          <label for="vehicle3"> Others, please specify below</label><br><br>
+        </form>
+  </div>
+    <!--  Write here the reason that lead you to report this user, please.
+            This will help us improve our filters when it comes to protecting our community.
+            Thank you!-->
+  <div id="report-success">
 
-     </div>
-      <textarea name="message" rows="7" cols="30" style="color: grey;">
-      </textarea>
-        <br>
-    <!--     <input id="submit-report" type="submit" value="Send" class="btn btn-yellow mt-2" >-->
-           <%= link_to "Send", mensaje_path, class: "btn btn-yellow" %>
-
-      </form>
+  </div>
 </div>
-  <!--  Write here the reason that lead you to report this user, please.
-          This will help us improve our filters when it comes to protecting our community.
-          Thank you!-->
-<div id="report-success">
-
-</div>
-
 <script>
   const mensaje = document.querySelector("#report-success")
   const submit = document.querySelector("#submit-report")
