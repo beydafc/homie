@@ -442,7 +442,7 @@ puts "States ready"
 
 
 puts "Creating users"
-user1 = User.new( email: "beyda@hotmail.com", password: "123456", first_name: "Beyda", last_name: "Fentanes", description: "Embarking on a perpetual quest for novel avenues of artistic expression, I find myself as an imaginative explorer. As a devoted student of science and innovation, my journey is a continuous exploration, seeking to seamlessly intertwine the realms of creativity with the intricate tapestry of technology that defines our modern era.", age: 24, university: "Universidad Anáhuac", state_id: queretaro.id)
+user1 = User.new( email: "beyda@hotmail.com", password: "123456", first_name: "Beyda", last_name: "Fentanes", description: "Embarking on a perpetual quest for novel avenues of artistic expression, I find myself as an imaginative explorer. As a devoted student of science and innovation, my journey is a continuous exploration, seeking to seamlessly intertwine the realms of creativity with the intricate tapestry of technology that defines our modern era.", age: 24, university: "Universidad Anáhuac", state_id: aguascalientes.id)
 
 user1_file = URI.open("https://avatars.githubusercontent.com/u/144365996?v=4")
 user1.photo.attach(io: user1_file, filename: "bey.png", content_type: "image/png")
@@ -452,7 +452,7 @@ user1.save!
 puts "User #{user1.first_name} created!"
 
 
-user2 = User.new( email: "camilo@hotmail.com", password: "123456", first_name: "Camilo", last_name: "V", description: "Navigating the vast online universe with an insatiable appetite for adventure, I consider myself a digital trailblazer. As a film student, I derive inspiration from the multifaceted tapestry of life, perpetually committed to weaving narratives that not only captivate but also forge profound connections with audiences, creating an indelible mark in the cinematic realm.", age: 25, university: "Universidad Colombia", state_id: durango.id)
+user2 = User.new( email: "camilo@hotmail.com", password: "123456", first_name: "Camilo", last_name: "V", description: "Navigating the vast online universe with an insatiable appetite for adventure, I consider myself a digital trailblazer. As a film student, I derive inspiration from the multifaceted tapestry of life, perpetually committed to weaving narratives that not only captivate but also forge profound connections with audiences, creating an indelible mark in the cinematic realm.", age: 25, university: "Universidad Colombia", state_id: baja_california_sur.id)
 
 user2_file = URI.open("https://avatars.githubusercontent.com/u/139200350?v=4")
 user2.photo.attach(io: user2_file, filename: "lc.png", content_type: "image/png")
@@ -462,7 +462,7 @@ user2.save!
 puts "User #{user2.first_name} created!"
 
 
-user3 = User.new( email: "victoria@hotmail.com", password: "123456", first_name: "Victoria", last_name: "V", description: "Infused with an unbridled passion for literature across diverse genres, I am a dedicated student harboring dreams of becoming a recognized writer. Every word I pen serves as an opportunity to construct intricate worlds and share unparalleled, soul-stirring experiences, weaving a literary legacy that transcends time and genre.", age: 26, university: "Universidad Argentina", state_id: cdmx.id)
+user3 = User.new( email: "victoria@hotmail.com", password: "123456", first_name: "Victoria", last_name: "V", description: "Infused with an unbridled passion for literature across diverse genres, I am a dedicated student harboring dreams of becoming a recognized writer. Every word I pen serves as an opportunity to construct intricate worlds and share unparalleled, soul-stirring experiences, weaving a literary legacy that transcends time and genre.", age: 26, university: "Universidad Argentina", state_id: aguascalientes.id)
 
 user3_file = URI.open("https://avatars.githubusercontent.com/u/150090896?v=4")
 user3.photo.attach(io: user3_file, filename: "lc.png", content_type: "image/png")
@@ -500,7 +500,7 @@ user6.save!
 puts "User #{user6.first_name} created!"
 
 
-user7 = User.new( email: "susana@hotmail.com", password: "123456", first_name: "Susana", last_name: "Barrera", description: "In the process of evolving as an athlete, I discover discipline and continuous self-improvement through the world of sports. As a future nutritionist, my mission is to harmonize the realms of mind and body, unlocking the potential for unparalleled physical and mental well-being, fostering a holistic approach to health and fitness.", age: 23, university: "ITAM", state_id: baja_california_sur.id)
+user7 = User.new( email: "susana@hotmail.com", password: "123456", first_name: "Susana", last_name: "Barrera", description: "In the process of evolving as an athlete, I discover discipline and continuous self-improvement through the world of sports. As a future nutritionist, my mission is to harmonize the realms of mind and body, unlocking the potential for unparalleled physical and mental well-being, fostering a holistic approach to health and fitness.", age: 23, university: "ITAM", state_id: aguascalientes.id)
 
 user7_file = URI.open("https://onlinedegrees.sandiego.edu/wp-content/uploads/2019/12/Teacher-Centered-vs.-Student-Centered-Learning.jpeg")
 user7.photo.attach(io: user7_file, filename: "sb.png", content_type: "image/png")
@@ -520,7 +520,7 @@ user8.save!
 puts "User #{user8.first_name} created!"
 
 
-user9 = User.new( email: "alex@hotmail.com", password: "123456", first_name: "Alex", last_name: "Cuéllar", description: "A dedicated gamer, I traverse virtual realms with an insatiable appetite for exploration and achievement. As a future game developer, I channel my passion into a career that aims to craft not just games but indelible experiences that resonate deeply with players, leaving an everlasting imprint on the immersive world of gaming and entertainment.", age: 22, university: "Universidad Marista", state_id: oaxaca.id)
+user9 = User.new( email: "alex@hotmail.com", password: "123456", first_name: "Alex", last_name: "Cuéllar", description: "A dedicated gamer, I traverse virtual realms with an insatiable appetite for exploration and achievement. As a future game developer, I channel my passion into a career that aims to craft not just games but indelible experiences that resonate deeply with players, leaving an everlasting imprint on the immersive world of gaming and entertainment.", age: 22, university: "Universidad Marista", state_id: aguascalientes.id)
 
 user9_file = URI.open("https://guiauniversitaria.mx/wp-content/uploads/2019/08/desercion-universitaria.jpg")
 user9.photo.attach(io: user9_file, filename: "sb.png", content_type: "image/png")
@@ -529,7 +529,7 @@ user9.save!
 
 puts "User #{user9.first_name} created!"
 
-user10 = User.new( email: "andrea@hotmail.com", password: "123456", first_name: "Andrea", last_name: "Núñez", description: "Passionate about the art of movement, I find unique expression as a dancer. As an aspiring psychologist, my journey revolves around comprehending the intricate connection between the mind and body, a quest that takes center stage in the rhythmic world of dance. Each movement becomes a canvas for exploring the depths of human emotion and expression.", age: 24, university: "Universidad Marista", state_id: slp.id)
+user10 = User.new( email: "andrea@hotmail.com", password: "123456", first_name: "Andrea", last_name: "Núñez", description: "Passionate about the art of movement, I find unique expression as a dancer. As an aspiring psychologist, my journey revolves around comprehending the intricate connection between the mind and body, a quest that takes center stage in the rhythmic world of dance. Each movement becomes a canvas for exploring the depths of human emotion and expression.", age: 24, university: "Universidad Marista", state_id: aguascalientes.id)
 
 user10_file = URI.open("https://www.youthdynamics.org/wp-content/uploads/2017/11/teen-engage.png")
 user10.photo.attach(io: user10_file, filename: "sb.png", content_type: "image/png")
@@ -704,7 +704,7 @@ puts "Promos too"
 s7 = Store.new(
   category: "Entertainment",
   address: "av aguascalientes 1601 aguascalientes, mexico",
-  name: "Cinépolis Aguscalientes",
+  name: "Cinépolis Aguascalientes",
   description: "Cinépolis no es simplemente un cine, es una experiencia cinematográfica inmersiva. Con pantallas de última generación y sonido envolvente, este establecimiento te transporta a mundos fascinantes. Desde blockbusters hasta películas independientes, cada proyección es una oportunidad para sumergirse en la magia del cine.",
   state_id: aguascalientes.id
 )
