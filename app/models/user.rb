@@ -18,7 +18,8 @@ class User < ApplicationRecord
 
   # Geocoder
   geocoded_by :state_location
-  after_validation :geocode
+  after_validation :geocode, :state_location
+
   def state_location
     self.state.address
   end
@@ -30,7 +31,7 @@ class User < ApplicationRecord
   # PG Search
   include PgSearch::Model
   pg_search_scope :global_search,
-  against: [ :first_name, :last_name, :description, :university ],
+  against: [ :first_name, :last_name, :description, :university, :email ],
   associated_against: {
     state: [ :name, :capital ]
   },

@@ -15,6 +15,12 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
+          <%= f.association :state, collection: State.all,
+                    required: true,
+                    hint: "Required" %>
+          <%= f.input :first_name, required: true%>
+          <%= f.input :last_name, required: true%>
+          <%= f.input :photo, as: :file, required: true %>
       </div>
 
       <div class="form-actions">
