@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { createConsumer } from "@rails/actioncable"
 
-// Connects to data-controller="chatroom-subscription"
+// Connects to data-controller="chatroom-subscriptions"
 export default class extends Controller {
   static values = { chatroomId: Number, currentUserId: Number }
   static targets = ["messages"]
