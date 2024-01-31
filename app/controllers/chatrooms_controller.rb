@@ -2,7 +2,6 @@ class ChatroomsController < ApplicationController
   before_action :authenticate_participant, only: :show
 
   def show
-    @users = User.all
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
   end
