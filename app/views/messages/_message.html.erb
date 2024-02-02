@@ -6,7 +6,6 @@
   </small>
   <% if uri?(message.content) %>
   <%= link_to "Check this promo!", message.content %>
-  <%= message.link %>
   <% else %>
   <p><%= message.content %></p>
   <% end %>
